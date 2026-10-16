@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { BackLink } from "@/components/ui/BackLink";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -19,12 +18,7 @@ export default function NotFound() {
           <h1 className="text-display font-medium leading-none tracking-tight text-fg">
             This page doesn&apos;t exist.
           </h1>
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-blue-dark hover:underline"
-          >
-            <ArrowLeft className="h-3.5 w-3.5" /> Back home
-          </Link>
+          <BackLink href="/">Back home</BackLink>
         </div>
       </Container>
     </Section>

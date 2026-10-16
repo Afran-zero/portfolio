@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink } from "lucide-react";
+import { BackLink } from "@/components/ui/BackLink";
 
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
@@ -71,21 +72,6 @@ function Detail({ title, body }: DetailProps) {
   );
 }
 
-function TbdDetail({ title }: { title: string }) {
-  return (
-    <div className="grid gap-4 border-t border-border/60 pt-8 md:grid-cols-12 md:gap-8">
-      <div className="md:col-span-3">
-        <Eyebrow>{title}</Eyebrow>
-      </div>
-      <div className="md:col-span-9">
-        <p className="font-mono text-xs uppercase tracking-widest text-fg-muted">
-          To be authored.
-        </p>
-      </div>
-    </div>
-  );
-}
-
 export default async function ProjectCaseStudyPage({
   params,
 }: {
@@ -135,12 +121,7 @@ export default async function ProjectCaseStudyPage({
         />
         <Container>
           <Reveal>
-            <Link
-              href="/industry"
-              className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-blue-dark hover:underline"
-            >
-              <ArrowLeft className="h-3.5 w-3.5" /> Back to industry
-            </Link>
+            <BackLink href="/industry">Back to industry</BackLink>
             <Eyebrow className="mt-8">
               {project.category} · {project.year}
             </Eyebrow>
@@ -194,11 +175,7 @@ export default async function ProjectCaseStudyPage({
                 title="Methodology"
                 body={`Built with ${project.stack.join(", ")}.`}
               />
-              <TbdDetail title="Architecture" />
-              <TbdDetail title="Implementation" />
-              <TbdDetail title="Limitations" />
-              <TbdDetail title="What I learned" />
-            </div>
+              </div>
           </Reveal>
         </Container>
       </Section>
@@ -210,14 +187,14 @@ export default async function ProjectCaseStudyPage({
             <Reveal>
               <SectionHeading
                 eyebrow="Related"
-                title="Other projects in this category."
+                title="More in this category."
                 index="01"
               />
               <Grid cols={3} className="mt-10">
                 {related.map((p) => (
                   <article
                     key={p.slug}
-                    className="border border-border bg-bg p-6 transition-colors hover:border-blue hover:bg-blue-50"
+                    className="card-lift border border-border bg-bg p-6"
                   >
                     <Eyebrow>{p.category}</Eyebrow>
                     <h3 className="mt-3 text-lg font-medium tracking-tight text-fg">

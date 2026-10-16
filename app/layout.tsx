@@ -67,7 +67,7 @@ export default function RootLayout({
           href="/feed.xml"
         />
         {/* Theme color for browser chrome. */}
-        <meta name="theme-color" content="#0b1220" />
+        <meta name="theme-color" content="#ffffff" />
         {/* react-grab fiber inspector — dev only. CDN script so it never
             enters the production bundle. */}
         {process.env.NODE_ENV === "development" && (

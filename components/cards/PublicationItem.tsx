@@ -29,7 +29,7 @@ export function PublicationItem({ publication, className }: Props) {
   return (
     <article
       className={cn(
-        "border border-border bg-bg p-6 transition-colors duration-base ease-out hover:border-blue",
+        "border border-border bg-bg p-6 card-lift",
         className,
       )}
     >
@@ -47,7 +47,7 @@ export function PublicationItem({ publication, className }: Props) {
         </div>
         <span
           className={cn(
-            "inline-flex shrink-0 items-center font-mono text-[10px] uppercase tracking-widest",
+            "inline-flex shrink-0 items-center font-mono text-micro uppercase tracking-widest",
             "rounded-sm px-2 py-1",
             statusStyles[publication.status],
           )}

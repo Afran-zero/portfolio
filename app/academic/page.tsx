@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowLeft, Download } from "lucide-react";
+import { Download } from "lucide-react";
 
 import { Container } from "@/components/layout/Container";
+import { ContactBand } from "@/components/layout/ContactBand";
+import { BackLink } from "@/components/ui/BackLink";
 import { Section } from "@/components/layout/Section";
 import { Grid } from "@/components/layout/Grid";
 import { HeroAcademic } from "@/components/hero/HeroAcademic";
@@ -150,7 +151,6 @@ export default async function AcademicPage() {
               eyebrow="Research Interests"
               pulse
               title="What I'm drawn to."
-              description="The questions I keep returning to."
             />
             <div className="mt-10">
               <ul
@@ -178,7 +178,7 @@ export default async function AcademicPage() {
             <SectionHeading
               eyebrow="Publications"
               pulse
-              title="Papers, preprints, posters."
+              title="Papers."
               description="FSM-LoRA (ICAISF 2026), TAL-GRN (Under Review), persona multiplicity (thesis)."
             />
           </Reveal>
@@ -277,7 +277,7 @@ export default async function AcademicPage() {
                   eyebrow="Quantum Papers"
                   pulse
                   title="Quantum, ongoing."
-                  description="QML on E91/BBM92 entanglement pathways, and a quantum-adaptive GAT for muon regression."
+                  description="QML entanglement pathways and a quantum-adaptive GAT."
                 />
               </Reveal>
               <Grid cols={2} className="mt-12">
@@ -386,7 +386,7 @@ export default async function AcademicPage() {
               <div>
                 <Eyebrow>Academic CV</Eyebrow>
                 <h3 className="mt-2 text-xl font-medium tracking-tight text-fg md:text-2xl">
-                  One-page CV for academic applications.
+                  One-page academic CV.
                 </h3>
               </div>
               <Button href="/cv/academic" variant="primary" size="md">
@@ -398,60 +398,18 @@ export default async function AcademicPage() {
       </Section>
 
       {/* ---- Contact ---- */}
-      <Section spacing="lg" tone="dark">
-        <Container>
-          <Reveal>
-            <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-              <div className="max-w-2xl space-y-4">
-                <Eyebrow tone="dark" pulse>Contact</Eyebrow>
-                <h2 className="text-3xl font-medium leading-tight tracking-tight text-fg-on-dark md:text-5xl">
-                  Open to research collaboration.
-                </h2>
-                <p className="text-base text-fg-on-dark/70 md:text-lg">
-                  Interested in MSc, MRes, PhD, and joint research.
-                </p>
-              </div>
-              <div className="flex flex-wrap items-center gap-3">
-                {contact.email && (
-                  <Button href={`mailto:${contact.email}`} variant="primary" size="lg" withArrow>
-                    Email
-                  </Button>
-                )}
-                {contact.github && (
-                  <Button
-                    href={contact.github}
-                    variant="secondary"
-                    size="lg"
-                    className="border-fg-on-dark/30 bg-transparent text-fg-on-dark hover:border-fg-on-dark hover:bg-fg-on-dark/10"
-                  >
-                    GitHub
-                  </Button>
-                )}
-                {contact.linkedin && (
-                  <Button
-                    href={contact.linkedin}
-                    variant="secondary"
-                    size="lg"
-                    className="border-fg-on-dark/30 bg-transparent text-fg-on-dark hover:border-fg-on-dark hover:bg-fg-on-dark/10"
-                  >
-                    LinkedIn
-                  </Button>
-                )}
-              </div>
-            </div>
-          </Reveal>
-        </Container>
-      </Section>
+      <ContactBand
+        title="Open to research collaboration."
+        description="MSc, MRes, PhD, and joint research."
+        email={contact.email}
+        github={contact.github}
+        linkedin={contact.linkedin}
+      />
 
       {/* ---- Back home ---- */}
-      <Section spacing="md" tone="default">
+      <Section spacing="md">
         <Container>
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-blue-dark hover:underline"
-          >
-            <ArrowLeft className="h-3.5 w-3.5" /> Back home
-          </Link>
+          <BackLink href="/">Back home</BackLink>
         </Container>
       </Section>
     </>

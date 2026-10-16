@@ -35,6 +35,11 @@
      Named --motion-ease (not --ease-out) to avoid Turbopack emitting a
      broken arbitrary-class fallback `.ease-\[var\(--ease-out\)\]`. */
   --motion-ease: cubic-bezier(0.2, 0, 0, 1);
+  --duration-base: 200ms;
+
+  /* Micro labels (badges, tags, meta chips). One step below text-xs. */
+  --text-micro: 0.6875rem;
+  --text-micro--line-height: 1rem;
 
   /* Display type scale — used by hero h1s and section display headings. */
   --text-display: clamp(2.75rem, 6vw, 5.5rem);
@@ -358,70 +363,6 @@ body {
     circle-blink 3.6s ease-in-out infinite;
 }
 
-@keyframes avatar-breathe {
-  0%,
-  100% {
-    transform: scaleY(1);
-  }
-  50% {
-    transform: scaleY(1.012);
-  }
-}
-
-@keyframes avatar-head-motion {
-  0%,
-  100% {
-    transform: rotate(0deg) translateX(0);
-  }
-  22% {
-    transform: rotate(-4deg) translateX(-2px);
-  }
-  50% {
-    transform: rotate(0deg) translateX(0);
-  }
-  78% {
-    transform: rotate(4deg) translateX(2px);
-  }
-}
-
-@keyframes avatar-torso-motion {
-  0%,
-  100% {
-    transform: rotate(0deg) translateY(0);
-  }
-  50% {
-    transform: rotate(0.7deg) translateY(-1px);
-  }
-}
-
-.avatar-breath {
-  animation: avatar-breathe 3.2s ease-in-out infinite;
-}
-
-.avatar-head-motion {
-  animation: avatar-head-motion 3.8s ease-in-out infinite;
-}
-
-.avatar-torso-motion {
-  animation: avatar-torso-motion 3.8s ease-in-out infinite;
-}
-
-@keyframes avatar-ground {
-  0%,
-  100% {
-    opacity: 0.25;
-    transform: scaleX(0.92);
-  }
-  50% {
-    opacity: 0.4;
-    transform: scaleX(1);
-  }
-}
-
-.avatar-ground {
-  animation: avatar-ground 3.2s ease-in-out infinite;
-}
-
 .experience-timeline::before {
   animation: timeline-rail-pulse 2.8s ease-in-out infinite;
   box-shadow: 0 0 8px rgb(23 105 255 / 0.45);
@@ -479,5 +420,187 @@ body {
 @media (prefers-reduced-motion: no-preference) {
   .animate-pulse-ring {
     animation: pulse-ring 1.6s ease-in-out infinite;
+  }
+}
+/* ---- PorCloud hero motion (components/hero/PorCloud.tsx) ----
+   Every rule ends on its rest state, so reduced-motion's global override
+   (duration 0.01ms, one iteration) lands on a correct static pose. */
+
+.pc-root {
+  --depth: 1;
+}
+.pc-depth {
+  transform: translate3d(
+    calc(var(--mx, 0px) * var(--depth, 1)),
+    calc(var(--my, 0px) * var(--depth, 1)),
+    0
+  );
+}
+.pc-scroll-y {
+  transform: translateY(calc(var(--scroll-progress, 0) * var(--scroll-y, 30px) * -1));
+}
+
+@keyframes pc-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes pc-float-cloud {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+.pc-float {
+  animation: pc-float 4.8s ease-in-out infinite;
+}
+.pc-float-cloud {
+  animation: pc-float-cloud 5.6s ease-in-out -2s infinite;
+}
+
+/* Shoulder shrug: origin at the shoulder line (viewBox units). */
+@keyframes pc-shrug {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-7px) rotate(-2.2deg);
+  }
+  50% {
+    transform: translateY(1px) rotate(1.4deg);
+  }
+  70% {
+    transform: translateY(-2px) rotate(-0.6deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+.pc-shrug {
+  transform-box: view-box;
+  transform-origin: 237px 190px;
+  animation: pc-shrug 1.5s cubic-bezier(0.45, 0, 0.25, 1) both;
+}
+
+/* Breathing: scale from the feet so the head rises gently. */
+@keyframes pc-breath {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.012);
+  }
+}
+.pc-breath {
+  transform-box: view-box;
+  transform-origin: 237px 514px;
+  animation: pc-breath 3.4s ease-in-out infinite;
+}
+
+/* Smile: a grin draws in on first load and replays on click. */
+@keyframes pc-smile {
+  from {
+    opacity: 0;
+    transform: scaleY(0.2);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+.pc-smile {
+  transform-box: view-box;
+  transform-origin: 236px 121px;
+  animation: pc-smile 0.7s cubic-bezier(0.2, 0, 0, 1) both;
+}
+
+/* Cloud puffs lift on hover. */
+.pc-hover-lift {
+  transition: transform 0.45s var(--motion-ease);
+}
+.pc-hover-lift:hover {
+  transform: translateY(-8px);
+}
+
+/* Halo: rotates with scroll, glows on hover, dots orbit. */
+.pc-ring-scroll {
+  transform-box: view-box;
+  transform-origin: 240px 210px;
+  transform: rotate(calc(var(--scroll-progress, 0) * 90deg));
+}
+.pc-ring-hover {
+  transition: filter 0.5s var(--motion-ease);
+}
+.pc-ring-hover:hover {
+  filter: drop-shadow(0 0 10px rgb(23 105 255 / 0.45));
+}
+
+@keyframes pc-orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.pc-orbit {
+  transform-box: view-box;
+  transform-origin: 240px 210px;
+  animation: pc-orbit 40s linear infinite;
+}
+.pc-root:has(.pc-ring-hover:hover) .pc-orbit {
+  animation-duration: 8s;
+}
+
+
+/* ---- Shared motion: cards and buttons ----
+   One vocabulary for every interactive surface:
+   - cards (.card-lift): lift 2px, blue border, soft blue shadow
+   - buttons and links (.btn-press): lift 1px on hover, press to 98% on click
+   Reduced-motion users keep the colour and shadow change, without movement. */
+.card-lift {
+  transition:
+    transform var(--duration-base) var(--motion-ease),
+    border-color var(--duration-base) var(--motion-ease),
+    box-shadow var(--duration-base) var(--motion-ease),
+    background-color var(--duration-base) var(--motion-ease);
+}
+.card-lift:hover {
+  transform: translateY(-2px);
+  border-color: var(--blue);
+  box-shadow: 0 12px 28px -16px rgb(23 105 255 / 0.35);
+}
+.card-lift:active {
+  transform: translateY(0) scale(0.99);
+}
+
+.btn-press {
+  transition:
+    transform var(--duration-base) var(--motion-ease),
+    background-color var(--duration-base) var(--motion-ease),
+    border-color var(--duration-base) var(--motion-ease),
+    color var(--duration-base) var(--motion-ease);
+}
+.btn-press:hover {
+  transform: translateY(-1px);
+}
+.btn-press:active {
+  transform: translateY(0) scale(0.98);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-lift:hover,
+  .card-lift:active,
+  .btn-press:hover,
+  .btn-press:active {
+    transform: none;
   }
 }

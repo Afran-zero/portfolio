@@ -20,7 +20,7 @@ export function GitHubCard({ repo, className }: Props) {
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        "group block h-full border border-border bg-bg p-5 transition-colors duration-base ease-out hover:border-blue hover:bg-blue-50",
+        "group block h-full border border-border bg-bg p-6 card-lift",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2",
         className,
       )}

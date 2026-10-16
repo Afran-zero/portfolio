@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight, Download } from "lucide-react";
 
 import { Container } from "@/components/layout/Container";
@@ -37,8 +36,7 @@ import {
   getHobbies,
 } from "@/lib/content";
 
-import Avatar from "@/components/hero/Avatar";
-import { ShapeBackground } from "@/components/shapes/ShapeBackground";
+import { HeroStage } from "@/components/hero/HeroStage";
 import { CloudField } from "@/components/sky/CloudField";
 
 export const metadata: Metadata = buildPageMetadata({
@@ -116,8 +114,7 @@ export default async function HomePage() {
                 >
                   <HeroIntro name={person.name} roles={roles} />
                   <p className="mt-6 max-w-xl text-base leading-relaxed text-fg-muted md:text-lg">
-                    Graph-learning models, QML experiments on HEP data, and
-                    full-stack applications. Pick the side you came for.
+                    Graph learning, quantum ML, and full-stack apps. Pick your side.
                   </p>
                   <div className="mt-6">
                     <p className="font-mono text-xs uppercase tracking-widest text-blue-dark">
@@ -148,69 +145,21 @@ export default async function HomePage() {
                 </BentoCard>
               </div>
 
-              {/* RIGHT — animated avatar with geometric motion field */}
-              <div className="relative isolate flex min-h-[360px] items-center justify-center overflow-hidden py-6 md:col-span-5 md:min-h-[410px] md:py-8">
-                <div className="absolute left-1/2 top-1/2 z-0 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 opacity-60 md:h-[380px] md:w-[380px]">
-                  <div className="h-full w-full animate-circle-drift">
-                    <ShapeBackground
-                      variant="outlined-circle"
-                      size={520}
-                      parallax
-                      parallaxAmount={18}
-                      className="h-full w-full"
-                    />
-                  </div>
+              {/* RIGHT — animated portrait on a cursor-reactive dot field */}
+              <HeroStage>
+                <div className="mt-6 flex w-full justify-center">
+                  <Button
+                    href="/media/cv/master-cv.pdf"
+                    download="Md-Kaif-Afran-Khan-Master-CV.pdf"
+                    variant="secondary"
+                    size="sm"
+                    className="bg-white"
+                  >
+                    <Download className="h-4 w-4" aria-hidden="true" />
+                    Download CV
+                  </Button>
                 </div>
-                <div
-                  className="absolute right-[-12px] top-0 z-0 h-[210px] w-[210px] opacity-85 md:right-[-24px] md:top-4 md:h-[270px] md:w-[270px]"
-                  style={{
-                    transform:
-                      "translate(var(--mx, 0px), var(--my, 0px))",
-                  }}
-                >
-                  <div className="h-full w-full animate-drift-slow [&_circle]:fill-blue/70">
-                    <ShapeBackground variant="dot-grid" size={280} className="h-full w-full" />
-                  </div>
-                </div>
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-6 z-0 rounded-full bg-blue-soft/35 blur-2xl"
-                  style={{
-                    transform:
-                      "translate(var(--mx, 0px), var(--my, 0px))",
-                  }}
-                />
-                <Image
-                  src="/portfolio-clean.svg"
-                  alt=""
-                  aria-hidden="true"
-                  width={500}
-                  height={500}
-                  className="absolute z-0 h-[330px] w-[330px] opacity-[0.08] md:h-[390px] md:w-[390px]"
-                />
-                <div className="relative z-10 flex h-auto w-full max-w-[360px] flex-col items-center justify-center md:max-w-[390px]">
-                  <div
-                    aria-hidden="true"
-                    className="avatar-ground absolute bottom-[54px] h-3 w-2/3 rounded-full bg-fg/25 blur-md"
-                  />
-                  <Avatar
-                    label={`${person.name} — portrait`}
-                    className="relative z-10 h-[275px] w-[275px] md:h-[330px] md:w-[330px]"
-                  />
-                  <div className="bg-blueprint relative z-20 flex w-full items-center justify-center border border-blue/45 bg-white px-4 py-2">
-                    <Button
-                      href="/media/cv/master-cv.pdf"
-                      download="Md-Kaif-Afran-Khan-Master-CV.pdf"
-                      variant="secondary"
-                      size="sm"
-                      className="bg-white"
-                    >
-                      <Download className="h-4 w-4" aria-hidden="true" />
-                      Download CV
-                    </Button>
-                  </div>
-                </div>
-              </div>
+              </HeroStage>
             </div>
           </Reveal>
         </Container>
@@ -281,11 +230,10 @@ export default async function HomePage() {
                 >
                   <div className="flex h-full flex-col">
                     <h3 className="text-2xl font-medium tracking-tight text-fg md:text-3xl">
-                      Software, AI, data, and client work.
+                      Engineering.
                     </h3>
                     <p className="mt-4 text-base leading-relaxed text-fg-muted">
-                      Production systems, full-stack applications, data pipelines,
-                      and consulting engagements across AI, automation, and web.
+                      Production AI, data, and web systems.
                     </p>
                     <div className="mt-auto flex items-center gap-2 pt-6 font-mono text-xs uppercase tracking-widest text-blue-dark">
                       View industry <ArrowRight className="h-3.5 w-3.5" />
@@ -306,12 +254,10 @@ export default async function HomePage() {
                 >
                   <div className="flex h-full flex-col">
                     <h3 className="text-2xl font-medium tracking-tight text-fg md:text-3xl">
-                      Research, publications, and thesis.
+                      Research.
                     </h3>
                     <p className="mt-4 text-base leading-relaxed text-fg-muted">
-                      Machine learning, quantum computing, and graph learning
-                      research with publications, conference talks, and thesis
-                      work.
+                      Publications, talks, and thesis work.
                     </p>
                     <div className="mt-auto flex items-center gap-2 pt-6 font-mono text-xs uppercase tracking-widest text-blue-dark">
                       View academia <ArrowRight className="h-3.5 w-3.5" />
@@ -336,8 +282,8 @@ export default async function HomePage() {
               <SectionHeading
                 eyebrow="Selected Work"
                 pulse
-                title="A handful of projects."
-                description="Denz, MarketPlus, FSM-LoRA, and Farhana Afroz Foundation — featured engineering and research."
+                title="Selected work."
+                description="Engineering and research, highlighted."
                 className="max-w-2xl"
               />
             </Reveal>
@@ -390,7 +336,7 @@ export default async function HomePage() {
                 eyebrow="Languages"
                 pulse
                 title="Language proficiency."
-                description="Spoken languages and standardized test scores."
+                description="Spoken languages and test scores."
                 className="max-w-2xl"
               />
             </Reveal>
@@ -414,7 +360,7 @@ export default async function HomePage() {
               eyebrow="Contact"
               pulse
               title="Get in touch."
-              description="Research collaboration, engineering work, or anything in between."
+              description="Research, engineering, or collaboration."
               className="max-w-2xl"
             />
           </Reveal>
@@ -464,10 +410,7 @@ export default async function HomePage() {
                       <div className="mt-3">
                         <Button
                           href={contact.linkedin}
-                          variant="primary"
-                          size="md"
-                          withArrow
-                          className="bg-fg-on-dark !text-blue-dark hover:bg-fg-on-dark/90"
+                          variant="inverse" size="md" withArrow
                         >
                           Open LinkedIn
                         </Button>
@@ -476,7 +419,7 @@ export default async function HomePage() {
                   )}
                   <li className="border-t border-white/15 pt-4">
                     <Meta
-                      className="!text-fg-on-dark/70"
+                      tone="dark"
                       items={[
                         contact.location ?? "—",
                         "Remote / on-site",

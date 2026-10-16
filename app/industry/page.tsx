@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
 
 import { Container } from "@/components/layout/Container";
+import { ContactBand } from "@/components/layout/ContactBand";
+import { BackLink } from "@/components/ui/BackLink";
 import { Section } from "@/components/layout/Section";
 import { Grid } from "@/components/layout/Grid";
 import { HeroIndustry } from "@/components/hero/HeroIndustry";
@@ -115,12 +115,10 @@ export default async function IndustryPage() {
               eyebrow="Professional Summary"
               pulse
               title="Software. AI. Data."
-              description="AI engineering, full-stack apps, data pipelines, and client work in production."
+              description="Production AI, full-stack, and data work."
             />
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-fg-muted md:text-lg">
-              {person.bio} Industry is where I ship — ML pipelines,
-              full-stack apps, and small-team leadership. The Academic page
-              covers research and publications separately.
+              {person.bio}
             </p>
           </Reveal>
         </Container>
@@ -141,7 +139,7 @@ export default async function IndustryPage() {
                   />
                 </div>
                 <div className="md:col-span-8">
-                  <article className="border border-border bg-bg p-6">
+                  <article className="card-lift border border-border bg-bg p-6">
                     <Meta
                       items={[
                         primaryEducation.start
@@ -191,11 +189,11 @@ export default async function IndustryPage() {
               eyebrow="Core Skills"
               pulse
               title="Technologies I use."
-              description="Python, TypeScript, FastAPI, React, AWS, Kafka, Spark, PyTorch, PennyLane."
+              description="The stack behind the work."
             />
             <dl className="mt-10 grid gap-8 md:grid-cols-2">
               {skills.groups.map((group) => (
-                <div key={group.id} className="border border-border bg-bg p-6">
+                <div key={group.id} className="card-lift border border-border bg-bg p-6">
                   <dt>
                     <Eyebrow>{group.label}</Eyebrow>
                   </dt>
@@ -224,7 +222,6 @@ export default async function IndustryPage() {
               eyebrow="Experience"
               pulse
               title="Where I've worked."
-              description="The Data Island, Farhana Afroz Foundation, UCCHASH Prohor."
               className="max-w-2xl"
             />
           </Reveal>
@@ -241,41 +238,38 @@ export default async function IndustryPage() {
             <SectionHeading
               eyebrow="Project Management"
               pulse
-              title="Workshops, docs, stakeholder work."
-              description="A condensed view of the PM track — 0-Day AI workshop, comprehensive documentation, and stakeholder presentations."
+              title="Project management."
+              description="Workshops, documentation, and stakeholder delivery."
               className="max-w-2xl"
             />
           </Reveal>
           <Reveal delay={0.05} className="mt-10">
             <div className="grid gap-6 md:grid-cols-3">
-              <article className="border border-border bg-bg p-6">
+              <article className="card-lift border border-border bg-bg p-6">
                 <Eyebrow>Workshops</Eyebrow>
                 <h3 className="mt-3 text-lg font-medium tracking-tight text-fg">
                   0-Day AI Workshop
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-fg-muted">
-                  Designed and facilitated the 0-Day AI workshop for
-                  4excelerate.org during the PM traineeship.
+                  Facilitated the 0-Day AI workshop for 4excelerate.org.
                 </p>
               </article>
-              <article className="border border-border bg-bg p-6">
+              <article className="card-lift border border-border bg-bg p-6">
                 <Eyebrow>Documentation</Eyebrow>
                 <h3 className="mt-3 text-lg font-medium tracking-tight text-fg">
-                  Comprehensive Project Docs
+                  Project docs
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-fg-muted">
-                  Drafted comprehensive project documentation covering scope,
-                  plan, and deliverables.
+                  Scope, plan, and deliverables, documented.
                 </p>
               </article>
-              <article className="border border-border bg-bg p-6">
+              <article className="card-lift border border-border bg-bg p-6">
                 <Eyebrow>Stakeholders</Eyebrow>
                 <h3 className="mt-3 text-lg font-medium tracking-tight text-fg">
-                  Stakeholder Presentations
+                  Presentations
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-fg-muted">
-                  Presented plans and documentation to stakeholders; coordinated
-                  on next steps and sign-off.
+                  Presented plans and next steps to stakeholders.
                 </p>
               </article>
             </div>
@@ -292,7 +286,7 @@ export default async function IndustryPage() {
                 eyebrow="Client Work"
                 pulse
                 title="Selected engagements."
-                description="Named where permitted, confidential where it isn't."
+                description="Named where permitted, confidential otherwise."
               />
             </Reveal>
             <Grid cols={2} className="mt-12">
@@ -313,7 +307,7 @@ export default async function IndustryPage() {
             <SectionHeading
               eyebrow="Client Projects"
               pulse
-              title="Selected projects I've shipped."
+              title="Selected projects."
               description="Denz, Aselo, STORE, MarketPlus, CryptoStream, Farhana Afroz Foundation."
             />
           </Reveal>
@@ -350,9 +344,9 @@ export default async function IndustryPage() {
                 variant="primary"
                 size="md"
                 withArrow
-                className="bg-blue-dark hover:bg-blue-dark/90"
+                
               >
-                Explore more on GitHub
+                More on GitHub
               </Button>
             </div>
           )}
@@ -368,7 +362,6 @@ export default async function IndustryPage() {
                 eyebrow="Certifications"
                 pulse
                 title="Coursework and credentials."
-                description="Listed as earned."
               />
               <CertificationList items={certifications} />
             </Reveal>
@@ -377,60 +370,18 @@ export default async function IndustryPage() {
       )}
 
       {/* ---- Contact ---- */}
-      <Section spacing="lg" tone="dark">
-        <Container>
-          <Reveal>
-            <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-              <div className="max-w-2xl space-y-4">
-                <Eyebrow tone="dark" pulse>Contact</Eyebrow>
-                <h2 className="text-3xl font-medium leading-tight tracking-tight text-fg-on-dark md:text-5xl">
-                  Looking to ship something?
-                </h2>
-                <p className="text-base text-fg-on-dark/70 md:text-lg">
-                  Engineering work, contracts, and full-time roles — based in Dhaka, remote-friendly.
-                </p>
-              </div>
-              <div className="flex flex-wrap items-center gap-3">
-                {contact.email && (
-                  <Button href={`mailto:${contact.email}`} variant="primary" size="lg" withArrow>
-                    Email
-                  </Button>
-                )}
-                {contact.github && (
-                  <Button
-                    href={contact.github}
-                    variant="secondary"
-                    size="lg"
-                    className="border-fg-on-dark/30 bg-transparent text-fg-on-dark hover:border-fg-on-dark hover:bg-fg-on-dark/10"
-                  >
-                    GitHub
-                  </Button>
-                )}
-                {contact.linkedin && (
-                  <Button
-                    href={contact.linkedin}
-                    variant="secondary"
-                    size="lg"
-                    className="border-fg-on-dark/30 bg-transparent text-fg-on-dark hover:border-fg-on-dark hover:bg-fg-on-dark/10"
-                  >
-                    LinkedIn
-                  </Button>
-                )}
-              </div>
-            </div>
-          </Reveal>
-        </Container>
-      </Section>
+      <ContactBand
+        title="Let's build something."
+        description="Roles, contracts, and client work. Based in Dhaka, remote-friendly."
+        email={contact.email}
+        github={contact.github}
+        linkedin={contact.linkedin}
+      />
 
       {/* ---- Back home ---- */}
-      <Section spacing="md" tone="default">
+      <Section spacing="md">
         <Container>
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-blue-dark hover:underline"
-          >
-            <ArrowLeft className="h-3.5 w-3.5" /> Back home
-          </Link>
+          <BackLink href="/">Back home</BackLink>
         </Container>
       </Section>
     </>

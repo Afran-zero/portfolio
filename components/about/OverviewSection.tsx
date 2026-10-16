@@ -33,7 +33,7 @@ export function OverviewSection({
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-8">
         {/* LEFT — Profile */}
-        <article className="relative flex flex-col border border-border bg-bg p-6 lg:col-span-4">
+        <article className="card-lift relative flex flex-col border border-border bg-bg p-6 lg:col-span-4">
           <span aria-hidden="true" className="corner-tl" />
           <span aria-hidden="true" className="corner-tr" />
           <span aria-hidden="true" className="corner-bl" />
@@ -56,7 +56,7 @@ export function OverviewSection({
           <ul className="mt-4 flex flex-wrap gap-1.5">
             {person.roles.map((r) => (
               <li key={r}>
-                <span className="inline-flex items-center rounded-sm border border-blue/30 bg-blue-50 px-2 py-1 font-mono text-[10px] uppercase tracking-widest text-blue-dark">
+                <span className="inline-flex items-center rounded-sm border border-blue/30 bg-blue-50 px-2 py-1 font-mono text-micro uppercase tracking-widest text-blue-dark">
                   {r}
                 </span>
               </li>
@@ -71,7 +71,7 @@ export function OverviewSection({
               {hobbies.items.map((h) => (
                 <li
                   key={h}
-                  className="font-mono text-[10px] uppercase tracking-widest text-fg-muted"
+                  className="font-mono text-micro uppercase tracking-widest text-fg-muted"
                 >
                   {h}
                 </li>
@@ -83,7 +83,7 @@ export function OverviewSection({
         {/* RIGHT — Bio + Available (equal-height stack) */}
         <div className="grid grid-cols-1 gap-6 lg:col-span-8 lg:grid-rows-2 lg:gap-8">
           {/* Bio */}
-          <article className="relative flex flex-col border border-border bg-bg p-6">
+          <article className="card-lift relative flex flex-col border border-border bg-bg p-6">
             <span aria-hidden="true" className="corner-tl" />
             <span aria-hidden="true" className="corner-tr" />
             <span aria-hidden="true" className="corner-bl" />

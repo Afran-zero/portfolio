@@ -38,7 +38,7 @@ export function SkillsCloud({ items, initial = 8 }: Props) {
           type="button"
           onClick={() => setExpanded((v) => !v)}
           aria-expanded={expanded}
-          className="mt-2 inline-flex items-center gap-2 border border-border bg-bg px-3 py-1.5 font-mono text-[11px] uppercase tracking-widest text-fg-muted transition-colors hover:border-blue hover:bg-blue-50 hover:text-blue-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2"
+          className="mt-2 inline-flex items-center gap-2 border border-border bg-bg px-3 py-1.5 font-mono text-micro uppercase tracking-widest text-fg-muted transition-colors hover:border-blue hover:bg-blue-50 hover:text-blue-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2"
         >
           {expanded ? (
             <>

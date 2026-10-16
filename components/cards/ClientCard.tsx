@@ -25,7 +25,7 @@ export function ClientCard({ entry, className }: Props) {
   return (
     <article
       className={cn(
-        "flex h-full flex-col border border-border bg-bg p-6 transition-colors duration-base ease-out hover:border-blue hover:bg-blue-50",
+        "flex h-full flex-col border border-border bg-bg p-6 card-lift",
         className,
       )}
     >

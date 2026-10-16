@@ -56,8 +56,8 @@ export function ProjectCard({ project, featured = false, flush = false, classNam
   return (
     <article
       className={cn(
-        "group relative flex h-full flex-col transition-colors duration-base ease-out",
-        !flush && "border border-border bg-bg p-6 hover:border-blue hover:bg-blue-50",
+        "group relative flex h-full flex-col",
+        !flush && "card-lift border border-border bg-bg p-6",
         flush && "p-0",
         className,
       )}
@@ -128,7 +128,7 @@ export function ProjectCard({ project, featured = false, flush = false, classNam
       </div>
       {featured && (
         <span
-          className="pointer-events-none absolute right-4 top-4 inline-flex items-center gap-1 rounded-sm bg-blue px-2 py-1 font-mono text-[10px] uppercase tracking-widest text-fg-on-dark"
+          className="pointer-events-none absolute right-4 top-4 inline-flex items-center gap-1 rounded-sm bg-blue px-2 py-1 font-mono text-micro uppercase tracking-widest text-fg-on-dark"
           aria-hidden="true"
         >
           Feature

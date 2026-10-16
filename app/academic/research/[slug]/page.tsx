@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Link from "next/link";
-import { ArrowLeft, ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
+import { BackLink } from "@/components/ui/BackLink";
 
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
@@ -119,12 +119,7 @@ export default async function ResearchDetailPage({
         />
         <Container width="narrow">
           <Reveal>
-            <Link
-              href="/academic"
-              className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-blue-dark hover:underline"
-            >
-              <ArrowLeft className="h-3.5 w-3.5" /> Back to academic
-            </Link>
+            <BackLink href="/academic">Back to academic</BackLink>
             <Eyebrow className="mt-8">Research</Eyebrow>
             <h1 className="mt-4 text-4xl font-medium leading-[1.05] tracking-tight text-fg md:text-5xl">
               {project.title}

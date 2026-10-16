@@ -70,7 +70,7 @@ export function BentoCard({
   return (
     <article
       className={cn(
-        "ticks relative flex h-full flex-col border border-border p-3 transition-colors duration-base ease-out hover:border-blue md:p-4",
+        "ticks relative flex h-full flex-col border border-border p-6 card-lift",
         toneClasses[tone],
         className,
       )}

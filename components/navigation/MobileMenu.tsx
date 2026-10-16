@@ -155,7 +155,7 @@ export function MobileMenu({ brand }: Props) {
                             href={child.href}
                             onClick={() => setOpen(false)}
                             className={cn(
-                              "flex h-10 items-center font-mono text-[11px] uppercase tracking-widest",
+                              "flex h-10 items-center font-mono text-micro uppercase tracking-widest",
                               childActive
                                 ? "text-blue-dark"
                                 : "text-fg-muted hover:text-fg",

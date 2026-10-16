@@ -26,7 +26,7 @@ export function QuantumPaperCard({ project, className }: Props) {
   return (
     <article
       className={cn(
-        "group relative flex h-full flex-col border border-border bg-bg transition-all duration-base ease-out hover:-translate-y-0.5 hover:border-blue hover:bg-blue-50",
+        "group relative flex h-full flex-col border border-border bg-bg card-lift",
         className,
       )}
       aria-label={`${project.title} — ongoing quantum research`}
@@ -79,11 +79,11 @@ export function QuantumPaperCard({ project, className }: Props) {
         </svg>
 
         {/* Quantum glyph + ongoing badge */}
-        <div className="absolute left-4 top-4 inline-flex items-center gap-2 bg-bg/90 px-2 py-1 font-mono text-[10px] uppercase tracking-widest text-blue-dark backdrop-blur-sm">
+        <div className="absolute left-4 top-4 inline-flex items-center gap-2 bg-bg/90 px-2 py-1 font-mono text-micro uppercase tracking-widest text-blue-dark backdrop-blur-sm">
           <Atom className="h-3 w-3" aria-hidden="true" />
           QML
         </div>
-        <div className="absolute right-4 top-4 inline-flex items-center gap-1 bg-blue px-2 py-1 font-mono text-[10px] uppercase tracking-widest text-fg-on-dark">
+        <div className="absolute right-4 top-4 inline-flex items-center gap-1 bg-blue px-2 py-1 font-mono text-micro uppercase tracking-widest text-fg-on-dark">
           Ongoing
         </div>
       </div>
@@ -104,16 +104,16 @@ export function QuantumPaperCard({ project, className }: Props) {
           {/* The only clickable surface — routes to the contact page. */}
           <a
             href="/contact"
-            className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-widest text-blue-dark transition-colors hover:text-fg"
+            className="inline-flex items-center gap-1.5 font-mono text-micro uppercase tracking-widest text-blue-dark transition-colors hover:text-fg"
           >
             Open to collaborators →
             <ArrowUpRight className="h-3 w-3" aria-hidden="true" />
           </a>
           <div className="mt-3 flex items-center justify-between gap-3">
-            <span className="font-mono text-[10px] uppercase tracking-widest text-fg-muted">
+            <span className="font-mono text-micro uppercase tracking-widest text-fg-muted">
               {project.setup?.split(/[,;]/)[0]?.trim() ?? "Simulator"}
             </span>
-            <span className="font-mono text-[10px] uppercase tracking-widest text-fg-muted">
+            <span className="font-mono text-micro uppercase tracking-widest text-fg-muted">
               [TBD: preprint status]
             </span>
           </div>

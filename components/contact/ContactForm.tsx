@@ -194,7 +194,7 @@ export function ContactForm({ tone = "light" }: Props) {
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p
           className={cn(
-            "font-mono text-[10px] uppercase tracking-widest",
+            "font-mono text-micro uppercase tracking-widest",
             isDark ? "text-fg-on-dark/70" : "text-fg-muted",
           )}
         >
@@ -279,7 +279,7 @@ function Field({
       {error && (
         <p
           id={`${id}-err`}
-          className="font-mono text-[10px] uppercase tracking-widest text-blue-dark"
+          className="font-mono text-micro uppercase tracking-widest text-blue-dark"
         >
           {error}
         </p>
@@ -344,7 +344,7 @@ function TextAreaField({
         {error ? (
           <p
             id={`${id}-err`}
-            className="font-mono text-[10px] uppercase tracking-widest text-blue-dark"
+            className="font-mono text-micro uppercase tracking-widest text-blue-dark"
           >
             {error}
           </p>
@@ -353,7 +353,7 @@ function TextAreaField({
         )}
         <p
           className={cn(
-            "font-mono text-[10px] uppercase tracking-widest",
+            "font-mono text-micro uppercase tracking-widest",
             isDark ? "text-fg-on-dark/70" : "text-fg-muted",
           )}
         >

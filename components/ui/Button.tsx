@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-type Variant = "primary" | "secondary" | "ghost";
+type Variant = "primary" | "secondary" | "ghost" | "inverse" | "outline-dark";
 type Size = "sm" | "md" | "lg";
 
 type CommonProps = {
@@ -22,11 +22,15 @@ type AsLink = CommonProps & {
 
 type Props = AsButton | AsLink;
 
+/** Light-surface variants. */
 const variantClasses: Record<Variant, string> = {
   primary: "bg-fg text-fg-on-dark hover:bg-fg/90",
-  secondary:
-    "border border-border bg-bg text-fg hover:bg-blue-50 hover:border-blue",
-  ghost: "text-fg hover:underline underline-offset-4",
+  secondary: "border border-border bg-bg text-fg hover:border-blue hover:bg-blue-50",
+  ghost: "text-fg hover:text-blue-dark",
+  // Dark-surface variants (contact bands, navy sections).
+  inverse: "bg-fg-on-dark text-fg hover:bg-white/90",
+  "outline-dark":
+    "border border-fg-on-dark/30 bg-transparent text-fg-on-dark hover:border-fg-on-dark hover:bg-fg-on-dark/10",
 };
 
 const sizeClasses: Record<Size, string> = {
@@ -37,9 +41,9 @@ const sizeClasses: Record<Size, string> = {
 
 function classesFor(variant: Variant, size: Size, extra?: string): string {
   return cn(
-    "group inline-flex items-center justify-center gap-2 font-medium transition-colors duration-base ease-out",
+    "btn-press group inline-flex items-center justify-center gap-2 font-medium",
     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2",
-    "disabled:opacity-50 disabled:pointer-events-none",
+    "disabled:pointer-events-none disabled:opacity-50",
     sizeClasses[size],
     variantClasses[variant],
     extra,
@@ -57,9 +61,8 @@ function arrow(): React.ReactNode {
 
 /**
  * Button — renders as <a> when href is provided, otherwise <button>.
- * Variants: primary (filled black), secondary (outlined), ghost (text only).
- *
- * Reference: skills/frontend §6.
+ * All variants share the `btn-press` motion (see app/globals.css): a 1px
+ * lift on hover and a slight press on click.
  */
 export function Button(props: Props) {
   const { variant = "secondary", size = "md", withArrow = false, className, children, ...rest } = props;

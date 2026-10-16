@@ -40,7 +40,7 @@ export function HeroIntro({ name, roles, className }: Props) {
       </motion.p>
 
       <h1 className="mt-6 text-display font-medium leading-[0.98] tracking-tight text-fg">
-        i am a
+        I'm a
         
         <motion.span
           className="mt-1 block text-[clamp(1.5rem,3vw,2.25rem)] font-normal leading-tight text-blue-dark"

@@ -29,18 +29,18 @@ export default function CvIndexPage() {
   return (
     <Section spacing="lg">
       <Container width="narrow">
-        <Eyebrow pulse>CV</Eyebrow>
         <SectionHeading
+          eyebrow="CV"
+          pulse
           title="Download CV."
-          description={`${cvVariants.length} versions. Pick the one that fits the reader.`}
-          className="mt-4"
+          description={`${cvVariants.length} versions, by audience.`}
         />
 
         <Grid cols={4} className="mt-12">
           {cvVariants.map((v) => (
             <article
               key={v.id}
-              className="group border border-border bg-bg p-6 transition-colors hover:border-blue"
+              className="card-lift group border border-border bg-bg p-6"
             >
               <Eyebrow>{v.audience}</Eyebrow>
               <h3 className="mt-3 text-lg font-medium text-fg">

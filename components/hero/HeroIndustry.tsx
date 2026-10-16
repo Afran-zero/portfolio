@@ -33,15 +33,10 @@ export function HeroIndustry({ person }: Props) {
           <div className="md:col-span-7">
             <Eyebrow pulse>Industry</Eyebrow>
             <h1 className="mt-4 text-display font-medium leading-[0.98] tracking-tight text-fg">
-              AI engineering.
-              <br />
-              Full-stack development.
-              <br />
-              Data engineering.
+              AI, full-stack, data.
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-fg-muted md:text-lg">
-              {person.role}. Aselo extraction pipeline at The Data Island,
-              Next.js 15 + Sanity for Farhana Afroz Foundation, STORE ERP.
+              {person.role}, shipping AI pipelines and full-stack products.
             </p>
             <div className="mt-8">
               <Meta

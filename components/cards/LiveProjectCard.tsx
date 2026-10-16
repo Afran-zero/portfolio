@@ -32,7 +32,7 @@ export function LiveProjectCard({ project, className }: Props) {
   return (
     <article
       className={cn(
-        "group relative flex h-full flex-col border border-border bg-bg transition-all duration-base ease-out hover:-translate-y-0.5 hover:border-blue hover:bg-blue-50",
+        "group relative flex h-full flex-col border border-border bg-bg card-lift",
         className,
       )}
     >
@@ -50,7 +50,7 @@ export function LiveProjectCard({ project, className }: Props) {
           <span className="h-2.5 w-2.5 rounded-full bg-blue/30" />
           <span className="h-2.5 w-2.5 rounded-full bg-blue/20" />
           <div className="ml-3 flex flex-1 items-center justify-center">
-            <span className="inline-flex items-center gap-1.5 border border-border bg-bg px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-fg-muted">
+            <span className="inline-flex items-center gap-1.5 border border-border bg-bg px-3 py-1 font-mono text-micro uppercase tracking-widest text-fg-muted">
               <ExternalLink className="h-3 w-3" aria-hidden="true" />
               {host}
             </span>
@@ -100,7 +100,7 @@ export function LiveProjectCard({ project, className }: Props) {
         </p>
         {project.impact && (
           <p className="mt-3 text-sm leading-relaxed text-fg">
-            <span className="font-mono text-[10px] uppercase tracking-widest text-blue">
+            <span className="font-mono text-micro uppercase tracking-widest text-blue">
               Impact —{" "}
             </span>
             {project.impact}
@@ -119,7 +119,7 @@ export function LiveProjectCard({ project, className }: Props) {
               Visit live site
               <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
             </a>
-            <span className="font-mono text-[10px] uppercase tracking-widest text-fg-muted">
+            <span className="font-mono text-micro uppercase tracking-widest text-fg-muted">
               {host}
             </span>
           </div>

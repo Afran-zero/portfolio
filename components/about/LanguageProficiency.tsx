@@ -17,9 +17,9 @@ export function LanguageProficiency({ items }: Props) {
       {items.map((lang) => (
         <li
           key={lang.name}
-          className="border border-border bg-bg p-5"
+          className="card-lift border border-border bg-bg p-6"
         >
-          <p className="font-mono text-[10px] uppercase tracking-widest text-fg-muted">
+          <p className="font-mono text-micro uppercase tracking-widest text-fg-muted">
             {lang.score !== undefined ? "Proficiency" : "Test score"}
           </p>
           <p className="mt-2 text-lg font-medium tracking-tight text-fg">

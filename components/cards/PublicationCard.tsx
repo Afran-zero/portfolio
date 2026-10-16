@@ -29,7 +29,7 @@ export function PublicationCard({
   const inner = (
     <article
       className={cn(
-        "group relative flex h-full flex-col border border-border bg-bg p-6 transition-colors duration-base ease-out hover:border-blue hover:bg-blue-50",
+        "group relative flex h-full flex-col border border-border bg-bg p-6 card-lift",
         className,
       )}
     >
@@ -63,7 +63,7 @@ export function PublicationCard({
 
       {featured && (
         <span
-          className="pointer-events-none absolute right-4 top-4 inline-flex items-center gap-1 rounded-sm bg-blue px-2 py-1 font-mono text-[10px] uppercase tracking-widest text-fg-on-dark"
+          className="pointer-events-none absolute right-4 top-4 inline-flex items-center gap-1 rounded-sm bg-blue px-2 py-1 font-mono text-micro uppercase tracking-widest text-fg-on-dark"
           aria-hidden="true"
         >
           Feature

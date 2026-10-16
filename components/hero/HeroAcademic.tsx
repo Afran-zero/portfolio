@@ -28,9 +28,7 @@ export function HeroAcademic({ person, research }: Props) {
               Academia.
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-fg-muted md:text-lg">
-              {person.role.split("&")[1]?.trim() ?? "Researcher"} in
-              {firstInterest.toLowerCase()}, {secondInterest.toLowerCase()},
-              graph learning, and scientific AI.
+              {person.role.split("&")[1]?.trim() ?? "Researcher"} in {firstInterest.toLowerCase()} and {secondInterest.toLowerCase()}.
             </p>
             <div className="mt-10">
               <Meta
