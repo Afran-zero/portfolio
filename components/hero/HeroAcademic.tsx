@@ -25,17 +25,17 @@ export function HeroAcademic({ person, research }: Props) {
           <div className="md:col-span-7">
             <Eyebrow pulse>Academic</Eyebrow>
             <h1 className="mt-6 text-display font-medium leading-[0.98] tracking-tight text-fg">
-              Academia.
+              Quantum and ML research.
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-fg-muted md:text-lg">
-              {person.role.split("&")[1]?.trim() ?? "Researcher"} in {firstInterest.toLowerCase()} and {secondInterest.toLowerCase()}.
+              Research Assistant at the NSU Center of Quantum Computing. I study {firstInterest.toLowerCase()} and {secondInterest.toLowerCase()}.
             </p>
             <div className="mt-10">
               <Meta
                 items={[
-                  person.location ?? "—",
+                  person.location ?? "",
                   "Research collaboration",
-                  "MSc / PhD applications open",
+                  "Open to MSc, MRes, and PhD",
                 ]}
               />
             </div>
@@ -55,7 +55,7 @@ export function HeroAcademic({ person, research }: Props) {
           <div className="md:col-span-5">
             <figure className="flex flex-col items-center text-center">
               <img
-                src="/images/research.svg"
+                src="/images/research-Photoroom.png"
                 alt="Research illustration"
                 className="h-auto w-full max-w-[360px]"
                 loading="eager"

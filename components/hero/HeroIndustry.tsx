@@ -33,14 +33,14 @@ export function HeroIndustry({ person }: Props) {
           <div className="md:col-span-7">
             <Eyebrow pulse>Industry</Eyebrow>
             <h1 className="mt-4 text-display font-medium leading-[0.98] tracking-tight text-fg">
-              AI, full-stack, data.
+              AI, data, and delivery.
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-fg-muted md:text-lg">
-              {person.role}, shipping AI pipelines and full-stack products.
+              I build AI systems and data pipelines, and I bring a project management background to the work.
             </p>
             <div className="mt-8">
               <Meta
-                items={[person.location ?? "—", "Available for engineering work"]}
+                items={[person.location ?? "", "Available for engineering work"]}
               />
               <div className="mt-6">
                 <Button
@@ -61,7 +61,7 @@ export function HeroIndustry({ person }: Props) {
           <div className="md:col-span-5">
             <figure className="flex flex-col items-center text-center">
               <img
-                src="/images/office.svg"
+                src="/images/office.png"
                 alt="Industry illustration"
                 className="h-auto w-full max-w-[360px]"
                 loading="eager"
