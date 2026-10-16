@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useId, useRef, type CSSProperties, type ReactNode } from "react";
-import { ShapeBackground } from "@/components/shapes/ShapeBackground";
 import { PorCloud } from "./PorCloud";
 
 /**
@@ -99,19 +98,6 @@ export function HeroStage({ children }: { children?: ReactNode }) {
         } as CSSProperties
       }
     >
-      {/* Outlined halo behind the portrait — slow drift, unchanged. */}
-      <div className="absolute left-1/2 top-1/2 z-0 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 opacity-60 md:h-[380px] md:w-[380px]">
-        <div className="h-full w-full animate-circle-drift">
-          <ShapeBackground
-            variant="outlined-circle"
-            size={520}
-            parallax
-            parallaxAmount={18}
-            className="h-full w-full"
-          />
-        </div>
-      </div>
-
       {/* Dot field: dim base layer + blue layer revealed around the cursor. */}
       <div
         aria-hidden="true"
@@ -154,8 +140,8 @@ export function HeroStage({ children }: { children?: ReactNode }) {
         }}
       />
 
-      <div className="relative z-10 flex h-auto w-full max-w-[360px] flex-col items-center justify-center md:max-w-[390px]">
-        <PorCloud className="h-[340px] w-[314px] md:h-[400px] md:w-[369px]" />
+      <div className="relative z-10 flex h-auto w-full max-w-[400px] flex-col items-center justify-center md:max-w-[440px]">
+        <PorCloud className="h-[390px] w-[360px] md:h-[470px] md:w-[434px]" />
         {children}
       </div>
     </div>

@@ -7,7 +7,7 @@ import { MouseShapeField } from "@/components/shapes/MouseShapeField";
 import { Footer } from "@/components/navigation/Footer";
 import { NavShell } from "@/components/navigation/NavShell";
 import { getPerson } from "@/lib/content";
-import { SITE_NAME, SITE_URL } from "@/lib/seo/person-jsonld";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/seo/person-jsonld";
 
 export async function generateMetadata(): Promise<Metadata> {
   const person = await getPerson();
@@ -15,10 +15,10 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: new URL(SITE_URL),
     title: {
-      default: `${person.name} — ${person.role}`,
-      template: `%s — ${person.name}`,
+      default: `${person.name} | ${person.role}`,
+      template: `%s | ${person.name}`,
     },
-    description: person.bio,
+    description: SITE_DESCRIPTION,
     alternates: {
       canonical: homeUrl,
       types: {
@@ -30,21 +30,21 @@ export async function generateMetadata(): Promise<Metadata> {
       siteName: SITE_NAME,
       locale: "en_US",
       url: homeUrl,
-      title: `${person.name} — ${person.role}`,
-      description: person.bio,
+      title: `${person.name} | ${person.role}`,
+      description: SITE_DESCRIPTION,
       images: [
         {
           url: `${SITE_URL}/og/home.png`,
           width: 1200,
           height: 630,
-          alt: `${person.name} — ${person.role}`,
+          alt: `${person.name} | ${person.role}`,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${person.name} — ${person.role}`,
-      description: person.bio,
+      title: `${person.name} | ${person.role}`,
+      description: SITE_DESCRIPTION,
       images: [`${SITE_URL}/og/home.png`],
     },
     robots: { index: true, follow: true },

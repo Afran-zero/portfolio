@@ -38,7 +38,7 @@ import {
 export const metadata: Metadata = buildPageMetadata({
   title: "Industry",
   description:
-    "Industry experience of Md Kaif Afran Khan — AI engineering, full-stack development, data engineering, and client work shipped in production.",
+    "AI engineering, data engineering, and full-stack work by Md Kaif Afran Khan. Production AI systems, data pipelines, and client projects, with a project management background.",
   path: "/industry",
   images: ["/og/industry.png"],
 });
@@ -80,7 +80,7 @@ export default async function IndustryPage() {
       buildPersonJsonLd(person, contact),
       {
         "@type": "ItemList",
-        name: `${person.name} — Industry Experience`,
+        name: `${person.name}: Industry Experience`,
         itemListElement: experience.slice(0, 10).map((role, i) => ({
           "@type": "ListItem",
           position: i + 1,
@@ -101,20 +101,20 @@ export default async function IndustryPage() {
   };
 
   return (
-    <>
+    <div className="bg-graph">
       <StructuredData data={industryJsonLd} />
 
       {/* ---- Hero ---- */}
       <HeroIndustry person={person} />
 
       {/* ---- Professional Summary ---- */}
-      <Section spacing="md">
+      <Section spacing="sm">
         <Container>
           <Reveal>
             <SectionHeading
               eyebrow="Professional Summary"
               pulse
-              title="Software. AI. Data."
+              title="Engineering with a delivery lens."
               description="Production AI, full-stack, and data work."
             />
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-fg-muted md:text-lg">
@@ -146,8 +146,8 @@ export default async function IndustryPage() {
                           ? new Date(primaryEducation.start).getFullYear()
                           : "",
                         primaryEducation.end
-                          ? `— ${new Date(primaryEducation.end).getFullYear()}`
-                          : "— Present",
+                          ? `to ${new Date(primaryEducation.end).getFullYear()}`
+                          : "to present",
                       ]}
                     />
                     <h3 className="mt-3 text-xl font-medium tracking-tight text-fg">
@@ -312,7 +312,7 @@ export default async function IndustryPage() {
             />
           </Reveal>
 
-          {/* Featured live sites — bigger interactive cards, live link only. */}
+          {/* Featured live sites: larger cards, live link only. */}
           {liveProjects.length > 0 && (
             <Grid cols={2} className="mt-12">
               {liveProjects.map((project, i) => (
@@ -323,7 +323,7 @@ export default async function IndustryPage() {
             </Grid>
           )}
 
-          {/* Everything else — standard cards. */}
+          {/* Everything else: standard cards. */}
           {otherProjects.length > 0 && (
             <Grid cols={3} className="mt-8">
               {otherProjects.map((project, i) => (
@@ -372,7 +372,7 @@ export default async function IndustryPage() {
       {/* ---- Contact ---- */}
       <ContactBand
         title="Let's build something."
-        description="Roles, contracts, and client work. Based in Dhaka, remote-friendly."
+        description="Engineering roles, contracts, and client work. Based in Dhaka, open to remote."
         email={contact.email}
         github={contact.github}
         linkedin={contact.linkedin}
@@ -384,6 +384,6 @@ export default async function IndustryPage() {
           <BackLink href="/">Back home</BackLink>
         </Container>
       </Section>
-    </>
+    </div>
   );
 }

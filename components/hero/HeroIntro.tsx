@@ -1,22 +1,19 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
-import { RoleTicker } from "@/components/ui/RoleTicker";
 
 type Props = {
   name: string;
-  roles: string[];
   className?: string;
 };
 
 /**
- * HeroIntro — name + role ticker block in the hero's left card.
+ * HeroIntro — greeting, name and headline for the home hero.
  *
- * Small entrance choreography: eyebrow draws in (translateX from a small
- * offset), the name fades + slides up, the role ticker block arrives last
- * with a longer y-offset. Honors prefers-reduced-motion.
+ * Entrance: greeting slides in, then the name, then the headline. Honors
+ * prefers-reduced-motion.
  */
-export function HeroIntro({ name, roles, className }: Props) {
+export function HeroIntro({ name, className }: Props) {
   const reduced = useReducedMotion();
 
   return (
@@ -39,19 +36,14 @@ export function HeroIntro({ name, roles, className }: Props) {
         {name}
       </motion.p>
 
-      <h1 className="mt-6 text-display font-medium leading-[0.98] tracking-tight text-fg">
-        I'm a
-        
-        <motion.span
-          className="mt-1 block text-[clamp(1.5rem,3vw,2.25rem)] font-normal leading-tight text-blue-dark"
-          initial={reduced ? false : { opacity: 0, y: 14 }}
-          animate={reduced ? undefined : { opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.22, ease: [0.2, 0, 0, 1] }}
-        >
-          <RoleTicker roles={roles} className="text-blue-dark" />
-          <span aria-hidden="true">.</span>
-        </motion.span>
-      </h1>
+      <motion.h1
+        className="mt-6 text-display font-medium leading-[0.98] tracking-tight text-fg"
+        initial={reduced ? false : { opacity: 0, y: 14 }}
+        animate={reduced ? undefined : { opacity: 1, y: 0 }}
+        transition={{ duration: 0.55, delay: 0.2, ease: [0.2, 0, 0, 1] }}
+      >
+        AI and data engineer.
+      </motion.h1>
     </div>
   );
 }

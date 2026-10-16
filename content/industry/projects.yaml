@@ -1,15 +1,14 @@
-# Selected projects — 5–8 entries per PLAN §20.
+# Selected projects — 5 to 8 entries.
 # Schema: ProjectSchema — slug, name, category, summary, year, stack[], impact?, github?, link?, case_study (default false), featured (default false).
-# Sourced from g:\portfolio\base data.md.
+# Sourced from base data.md.
 
 - slug: aselo-form-autofill
   name: Aselo AI Form Auto-Fill
-  category: AI / Full-Stack
+  category: AI Engineering
   summary: >-
-    Automated extraction of structured form fields (Child, Category, Summary)
-    from conversation transcripts. S3 → FastAPI → AWS Bedrock (Claude) → S3 +
-    React. Real-time chat view, MFA session support, form auto-fill, scalable
-    for Lambda + API Gateway or ECS/Fargate.
+    An AI system that reads crisis-line conversation transcripts and fills in
+    case forms. It pulls out the Child, Category, and Summary fields with AWS
+    Bedrock (Claude), then shows the results in a real-time React chat view.
   year: 2025
   stack:
     - Python
@@ -19,53 +18,46 @@
     - AWS S3
     - AWS Bedrock
     - Claude
-  impact: Extracted Child, Category, and Summary fields from conversation transcripts in near real time via S3 → FastAPI → AWS Bedrock (Claude) → React chat.
+  impact: >-
+    Turns raw transcripts into structured form fields, with MFA session support.
   github: https://github.com/Afran-zero/Aselo-Tech-Matters-main
   case_study: true
   featured: true
 
 - slug: store-multi-tenant-erp
-  name: STORE — Multi-Tenant Smart Multi-Store ERP
+  name: "STORE: Multi-Store ERP"
   category: Full-Stack
   summary: >-
-    Full ERP with backend API, web dashboard, mobile worker app, and AI
-    assistant. Auth/RBAC, Stores, Inventory, Recipes, Sales, Attendance,
-    Tickets, Analytics, OpenRouter-backed AI assistant. Multi-tenancy
-    enforced via businessId.
+    A multi-store ERP with a backend API, a web dashboard, a mobile app for
+    workers, and an AI assistant. It covers inventory, sales, attendance,
+    recipes, support tickets, and analytics.
   year: 2025
   stack:
     - Python
     - FastAPI
     - MongoDB
-    - Motor
     - JWT
     - Redis
-    - APScheduler
     - React
     - TypeScript
     - Vite
     - Tailwind CSS
-    - React Query
-    - Recharts
     - React Native
     - Expo
   impact: >-
-    One FastAPI backend powering web dashboard, mobile worker app, and an
-    OpenRouter-backed AI assistant under a shared RBAC + businessId tenancy
-    model — covering Stores, Inventory, Recipes, Sales, Attendance, Tickets,
-    and Analytics end-to-end.
+    One backend serves the web dashboard and the mobile app. Each business is
+    isolated by businessId, and access is controlled by role.
   github: https://github.com/Afran-zero/STORE
   case_study: true
   featured: true
 
 - slug: cryptostream-pipeline
-  name: CryptoStream — Real-Time Crypto Market Data Pipeline
+  name: "CryptoStream: Real-Time Crypto Data Pipeline"
   category: Data Engineering
   summary: >-
-    End-to-end real-time pipeline: WebSocket → Kafka → Spark Structured
-    Streaming → Postgres (Bronze) → dbt (Silver + Gold) → FastAPI + React
-    dashboard. Airflow runs every 5 minutes. 1-minute OHLCV candles and
-    moving averages; health monitoring; Docker Compose full stack.
+    A real-time pipeline for crypto market data. Prices flow from WebSocket
+    into Kafka, then Spark Streaming, then Postgres, then dbt, then a FastAPI
+    and React dashboard. Airflow runs the batch steps every five minutes.
   year: 2025
   stack:
     - Python
@@ -77,19 +69,20 @@
     - FastAPI
     - React
     - Docker Compose
-  impact: WebSocket → Kafka → Spark Structured Streaming → Postgres (Bronze) → dbt (Silver + Gold) → FastAPI + React. Airflow runs every 5 minutes for OHLCV candles and moving averages.
+  impact: >-
+    Builds 1-minute OHLCV candles and moving averages on a Bronze, Silver, and
+    Gold medallion layout. The full stack runs in Docker Compose.
   github: https://github.com/Afran-zero/CryptoStream-real-time-crypto-analytics-pipeline
   case_study: true
   featured: true
 
 - slug: marketplus-stock-analytics
-  name: MarketPlus — Local Stock Analytics Dashboard
+  name: "MarketPlus: Local Stock Analytics"
   category: Data Engineering
   summary: >-
-    Medallion-architecture local stock analytics. AWS S3 + Athena + Glue +
-    FastAPI + React + Spark + Prefect. Cloud ingestion via EventBridge +
-    Lambda from Alpha Vantage; local Spark processing via Prefect.
-    Daily returns, moving averages, volatility, top movers.
+    A stock analytics dashboard on a medallion architecture. Cloud ingestion
+    runs on EventBridge and Lambda, data lands in S3, and Glue and Athena
+    query it. Spark runs locally under Prefect.
   year: 2025
   stack:
     - Python
@@ -105,16 +98,17 @@
   github: https://github.com/Afran-zero/Marketplace
   case_study: true
   featured: false
-  impact: Daily returns, moving averages, volatility, and top movers queried through Athena + Glue over S3. Scheduled Spark runs via Prefect.
+  impact: >-
+    Calculates daily returns, moving averages, volatility, and top movers from
+    the Gold layer.
 
 - slug: service-provider-marketplace
   name: Service Provider Platform
   category: Full-Stack
   summary: >-
-    Marketplace connecting customers with local service providers (cleaning,
-    plumbing, electrical). Business registration, bookings, reviews, admin
-    dashboard, role-based access. Design patterns: Factory, Command,
-    Observer, Adapter, Decorator, Proxy, Repository.
+    A marketplace that connects customers with local service providers for
+    cleaning, plumbing, and electrical work. It handles business registration,
+    bookings, reviews, and an admin dashboard with role-based access.
   year: 2024
   stack:
     - Python
@@ -133,9 +127,9 @@
   name: Denz E-Commerce
   category: Full-Stack
   summary: >-
-    Modern e-commerce platform for Denz Apparel. Product browsing with
-    filters, variants/sizes, cart, checkout, order history, Google OAuth,
-    admin dashboard (orders, products, ads).
+    The online store for Denz Apparel. Customers can browse by filter and size,
+    use a cart, check out, and see order history. Admins manage orders,
+    products, and ads.
   year: 2025
   stack:
     - TypeScript
@@ -144,19 +138,20 @@
     - PostgreSQL
     - Cloudinary
     - Tailwind CSS
-  impact: Live apparel storefront for Denz Apparel with Google OAuth, role-based admin, and Postgres-backed product/order management.
+  impact: >-
+    A live storefront with Google sign-in, role-based admin access, and
+    Postgres-backed products and orders.
   link: https://www.denzapparel.com/
-  github: https://github.com/Bijoy2406/denz
   case_study: false
   featured: true
 
 - slug: farhana-foundation-ngo
-  name: Farhana Afroz Foundation NGO Website
+  name: Farhana Afroz Foundation Website
   category: Full-Stack
   summary: >-
-    Responsive NGO website with donation system, events, team showcase,
-    impact tracking, FAQ, contact forms. Dynamic content via Sanity CMS,
-    donation modal with QR / bank details, image protection.
+    The website for a humanitarian foundation working in education, healthcare,
+    and disaster relief. It has a donation page with QR and bank details,
+    events, impact stats, an FAQ, and a team section, all managed in Sanity CMS.
   year: 2025
   stack:
     - Next.js 15
@@ -166,19 +161,20 @@
     - EmailJS
     - Framer Motion
     - Embla Carousel
-  impact: Sanity-backed NGO site with donation flow (QR + bank details), events, team showcase, impact tracking, and image-protected media for the Farhana Afroz Foundation.
+  impact: >-
+    A live site with impact tracking, events, and a donation flow.
   link: https://www.farhanaafrozfoundation.org/
   github: https://github.com/Bijoy2406/ngo_donation
   case_study: false
   featured: false
 
 - slug: uwu-connect-social
-  name: Uwu Connect — Social Media Platform
+  name: "Uwu Connect: Social Media Platform"
   category: Web
   summary: >-
-    Full social-media web app: registration with email verification,
-    follow / block, private messaging, media upload, comments, likes /
-    dislikes, reporting, admin moderation. Academic project (CSE311.10).
+    A social media web app with email verification, follow and block, private
+    messages, media uploads, comments, reactions, reporting, and admin
+    moderation. Built as an academic project for CSE311.10.
   year: 2024
   stack:
     - PHP

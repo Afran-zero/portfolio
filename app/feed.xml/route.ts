@@ -13,11 +13,11 @@ import {
   getResearchProjects,
   getPerson,
 } from "@/lib/content";
-import { SITE_URL } from "@/lib/seo/person-jsonld";
+import { SITE_DESCRIPTION, SITE_URL } from "@/lib/seo/person-jsonld";
 
 const FEED_TITLE = "Md Kaif Afran Khan";
 const FEED_SUBTITLE =
-  "Industry and academic work from Md Kaif Afran Khan — AI engineering, full-stack, and research.";
+  "Industry and academic work from Md Kaif Afran Khan: AI engineering, data engineering, and research.";
 
 type Entry = {
   id: string;
@@ -78,9 +78,9 @@ export async function GET(_req: NextRequest): Promise<Response> {
   const baseEntries: Entry[] = [
     {
       id: "home",
-      title: `${person.name} — ${person.role}`,
+      title: `${person.name} | ${person.role}`,
       url: `${SITE_URL}/`,
-      summary: person.bio,
+      summary: SITE_DESCRIPTION,
       updated: now,
     },
     {
@@ -88,7 +88,7 @@ export async function GET(_req: NextRequest): Promise<Response> {
       title: "Industry experience",
       url: `${SITE_URL}/industry`,
       summary:
-        "Industry roles, projects, and shipped work — AI engineering, data, full-stack, client work.",
+        "Industry roles, projects, and client work in AI engineering, data, and full-stack development.",
       updated: now,
     },
     {

@@ -1,117 +1,103 @@
-# Research projects — 3–5 entries. Used by /academic and /academic/research/[slug].
+# Research projects — used by /academic and /academic/research/[slug].
 # Schema: ResearchProjectSchema — slug, title, question, motivation?, background?, method,
 #                                    setup?, results, limitations?, future_work?, paper_url? (url), repo_url? (url).
-# Sourced from g:\portfolio\base data.md.
+# Sourced from base data.md. Only verified results appear here.
 
 - slug: benemo-bangla-multimodal
-  title: BENEMO — Bangla Multimodal Emotion Detection (Early Hybrid Approach)
+  title: "BENEMO: Bangla Multimodal Emotion Detection"
   question: >-
-    Can a hybrid speech + text model recognize emotions in Bangla
-    conversation data more accurately than text-only baselines?
+    Can a model that combines speech and text recognize emotion in Bangla
+    conversations better than a text-only model?
   motivation: >-
-    Bangla is low-resource for affective computing; most prior work is
-    text-only or English-centric. A speech + text fusion is a natural
+    Bangla is a low-resource language for affective computing, and most prior
+    work is text-only or English-first. Speech and text together are a natural
     next step.
   background: >-
-    Early thesis work for CSE299 at North South University. Combines
-    Bangla speech features with text features for emotion classification.
+    Early thesis work for CSE299 at North South University.
   method: >-
-    Hybrid early-fusion pipeline: speech features (e.g., MFCCs / wav2vec
-    features) + Bangla text features (token / sub-word embeddings)
+    An early hybrid pipeline. Speech features and Bangla text features are
     fused before classification.
   setup: >-
-    Internal CSE299 setup; Bangla conversational / acted emotion data;
-    standard 80/10/10 splits.
+    Internal CSE299 setup on a Bangla acted-emotion dataset.
   results: >-
-    Speech + text fusion outperformed text-only on the internal acted-emotion
-    dataset. Specific delta: [TBD: accuracy / weighted-F1 delta].
+    Speech and text fusion beat the text-only baseline on the internal dataset.
   limitations: >-
-    Small dataset; acted rather than spontaneous emotion; no
-    cross-corpus evaluation.
+    Small dataset, acted rather than spontaneous emotion, and no cross-corpus
+    evaluation.
   future_work: >-
-    Larger spontaneous-emotion corpora; cross-lingual transfer;
-    self-supervised speech representations.
+    Larger spontaneous-emotion corpora, cross-lingual transfer, and
+    self-supervised speech features.
   repo_url: https://github.com/Afran-zero/BENEMO-BANGLA-MULTIMODAL-EMOTION-DETECTION-EARLY-HYBRID-APPROACH
 
 - slug: knn-k-parameter-heuristics
   title: >-
-    Comparative Analysis of Heuristic and Dynamic Methods for Optimizing
-    the K Parameter in K-Nearest Neighbors
+    Heuristic and Dynamic Methods for Choosing K in K-Nearest Neighbors
   question: >-
-    Do dynamic K-selection strategies outperform fixed or heuristic K
-    choices for K-Nearest Neighbors classification?
+    Do dynamic ways of choosing K beat fixed or heuristic choices for K-Nearest
+    Neighbors classification?
   motivation: >-
-    K-NN performance is famously sensitive to K. Most practitioners pick
-    K heuristically (odd integers around sqrt(N), etc.). Dynamic methods
-    adjust K per query or per region.
+    K-NN is sensitive to K. Most people pick K by rule of thumb, such as an odd
+    number near the square root of N. Dynamic methods adjust K per query or per
+    region.
   method: >-
-    Comparative study of heuristic K choices vs. dynamic K-selection
-    methods on a set of standard classification benchmarks.
+    A comparison of heuristic K choices and dynamic K-selection methods on
+    standard classification benchmarks.
   setup: >-
-    Standard tabular classification benchmarks; identical preprocessing
-    and evaluation harness across methods.
+    Tabular classification benchmarks, with the same preprocessing and
+    evaluation for every method.
   results: >-
-    Comparative analysis completed; full write-up in the repo.
-    [TBD: best dynamic method's mean accuracy gain over fixed K].
+    The comparison is complete. The full write-up is in the repository.
   limitations: >-
-    Limited benchmark coverage; no high-dimensional image / text
+    Limited benchmark coverage, with no high-dimensional image or text
     benchmarks.
   future_work: >-
-    Scale to higher-dimensional and structured inputs; integrate with
-    learned distance metrics.
+    Higher-dimensional and structured inputs, and learned distance metrics.
   repo_url: https://github.com/Afran-zero/Comparative-Analysis-of-Heuristic-and-Dynamic-Methods-for-Optimizing-the-K-Parameter
 
 - slug: qml-as-qkd-entanglement-pathways
   title: QML as QKD in Entanglement Pathways
   question: >-
-    Which noise types and protocol-level changes in BBM92 and E91 quantum
-    key distribution can be characterized and improved using quantum
-    machine learning?
+    Can quantum machine learning characterize the noise in BBM92 and E91
+    quantum key distribution, and suggest protocol changes that help?
   motivation: >-
-    E91 (Ekert 1991) and BBM92 (Bennett, Brassard, Mermin 1992) are
-    entanglement-based QKD protocols. Real-world implementations face
-    detector inefficiencies, channel noise, and side-channel attacks.
-    [TBD: specific noise characterization or key-rate gain QML targets].
+    E91 (Ekert, 1991) and BBM92 (Bennett, Brassard, and Mermin, 1992) are
+    entanglement-based QKD protocols. Real hardware faces detector loss and
+    channel noise, so the noise has to be understood before it can be reduced.
   background: >-
-    E91 relies on Bell-inequality violations; BBM92 on CHSH. Both can
-    be expressed in the same prepare-and-measure + entanglement-witness
-    framework. Ongoing work, title not yet fixed.
+    E91 relies on Bell inequality violations and BBM92 relies on CHSH tests.
+    Both fit one prepare-and-measure and entanglement-witness framework.
   method: >-
-    Apply quantum machine learning techniques to characterize noise
-    types and propose protocol-level changes on BBM92 and E91.
+    Quantum machine learning to characterize noise types and propose
+    protocol-level changes for BBM92 and E91.
   setup: >-
-    Theoretical + simulated analysis using PennyLane and Qiskit; later
-    possible hardware runs.
+    Simulation with PennyLane and Qiskit. Hardware runs are a later step.
   results: >-
-    Work in progress.
+    In progress.
   limitations: >-
-    Title not fixed; simulator-only so far.
+    Title not final. Simulator only so far.
   future_work: >-
-    Hardware validation on superconducting or photonic QKD testbeds;
-    integration with classical post-processing.
+    Hardware validation on QKD testbeds and integration with classical
+    post-processing.
 
 - slug: piqagat-quantum-adaptive-gat
-  title: Piqagat — Quantum Adaptive GAT for Muon Regression
+  title: "Piqagat: Quantum Adaptive Graph Attention for Muon Regression"
   question: >-
-    Can a quantum-adaptive Graph Attention Network improve muon
-    transverse-momentum regression compared with classical GAT?
+    Can a quantum-adaptive Graph Attention Network improve muon regression
+    compared with a classical GAT?
   motivation: >-
-    GATs are strong on structured / graph data; quantum feature maps
-    offer exponentially large implicit feature spaces. Combining both
-    is a natural exploration for muon regression tasks.
+    Graph attention networks work well on graph-structured data. Quantum feature
+    maps offer large implicit feature spaces. Combining the two is a natural
+    thing to test on muon regression.
   background: >-
-    Quantum-adaptive graph attention — adaptive GAT layers with quantum
-    feature maps at the node-embedding stage.
+    Adaptive GAT layers with quantum feature maps at the node-embedding stage.
   method: >-
-    Quantum-adaptive GAT architecture. Evaluation on muon regression
-    benchmarks.
+    A quantum-adaptive GAT, evaluated on muon regression against a classical GAT
+    baseline.
   setup: >-
-    PennyLane / Qiskit-based simulation; classical GAT baseline for
-    comparison.
+    Simulation with PennyLane and Qiskit.
   results: >-
-    Work in progress.
+    In progress.
   limitations: >-
-    Simulator scale; noise robustness not yet characterized.
+    Simulator scale only. Noise robustness is not yet measured.
   future_work: >-
-    Hardware runs; ablations on quantum-encoding choice and graph
-    topology.
+    Hardware runs, and ablations on the quantum encoding and graph structure.

@@ -15,7 +15,7 @@ import type { Metadata } from "next";
 import { SITE_NAME, SITE_URL } from "@/lib/seo/person-jsonld";
 
 export type BuildPageMetadataInput = {
-  /** The page-level title prefix — root layout adds " — Md Kaif Afran Khan". */
+  /** The page-level title prefix — root layout adds " | Md Kaif Afran Khan". */
   title: string;
   /** Unique, 140–160 char description. */
   description: string;

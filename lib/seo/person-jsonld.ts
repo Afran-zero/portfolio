@@ -9,9 +9,14 @@
 
 import type { Contact, Person } from "@/lib/schemas";
 
-export const SITE_URL = "https://kaif.dev";
+/** Set NEXT_PUBLIC_SITE_URL once a domain is chosen. */
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
-export const SITE_NAME = "Kaif — AI Engineer & Researcher";
+export const SITE_NAME = "Kaif | AI Engineer and Data Engineer";
+
+/** Third-person summary for search and social previews. */
+export const SITE_DESCRIPTION =
+  "Md Kaif Afran Khan is an AI engineer, data engineer, and researcher in Dhaka, Bangladesh. He builds AI and data systems and studies quantum machine learning.";
 
 /**
  * Profile URLs that should appear in `Person.sameAs`. These are the strongest
@@ -37,7 +42,7 @@ export function buildPersonJsonLd(person: Person, contact: Contact) {
     name: person.name,
     alternateName: person.short_name,
     jobTitle: person.role,
-    description: person.bio,
+    description: SITE_DESCRIPTION,
     url: SITE_URL,
     image: `${SITE_URL}${person.portrait_path}`,
     pronouns: person.pronouns,
@@ -56,7 +61,7 @@ export function buildWebSiteJsonLd(person: Person) {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: `${person.name} — ${person.role}`,
+    name: person.name,
     alternateName: SITE_NAME,
     url: SITE_URL,
     inLanguage: "en",

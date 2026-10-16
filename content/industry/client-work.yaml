@@ -1,37 +1,34 @@
 # Client work — mix of named and confidential entries.
 # Schema: ClientWorkSchema — id, name, confidential (default false), domain, role, start?, end (nullable)?, description.
-# Sourced from g:\portfolio\base data.md.
+# Sourced from base data.md.
 
 - id: farhana-foundation-ngo-2024
   name: Farhana Afroz Foundation
   confidential: false
-  domain: Non-profit / Humanitarian
+  domain: Non-profit and humanitarian
   role: Technical Lead (Volunteer)
   start: 2024-01-01
   end: null
   description: >-
-    Built and now maintain farhanaafrozfoundation.org: donation flow (QR +
-    bank details, image protection), events, team showcase, impact tracking,
-    FAQ, contact forms. Next.js 15 + Sanity CMS.
+    I built and maintain the foundation's website: a donation flow with QR and
+    bank details, events, impact tracking, an FAQ, and contact forms. It runs on
+    Next.js 15 and Sanity CMS.
 
 - id: aselo-tech-matters-2025
   name: The Data Island
   confidential: false
-  domain: AI / Social services
-  role: AI Engineer & Project Management Intern
+  domain: AI and social services
+  role: AI Engineer and Project Management Intern
   start: 2025-01-01
   end: 2026-01-01
   description: >-
-    Built Aselo, an automated form-filling system for the Aselo crisis-line
-    platform. Extracts Child, Category, and Summary fields from S3-hosted
-    transcripts via AWS Bedrock (Anthropic Claude) and surfaces them in a
-    real-time React chat view, with MFA session support.
+    I built Aselo, an AI form-filling system for a crisis-line platform. It
+    extracts structured fields from transcripts and shows them in a real-time
+    React chat.
   highlights:
-    - "End-to-end pipeline: S3 → FastAPI → Bedrock → S3 + React frontend."
-    - "Architecture ready for AWS Lambda + API Gateway (serverless) or ECS/Fargate (containerized) deployment."
-    - "Managed stakeholder relationships and ran stakeholder / deal meetings."
-    - "Created audit-ready documentation and project artifacts."
-    - "Public code: https://github.com/Afran-zero/Aselo-Tech-Matters-main"
+    - "Pipeline: S3, FastAPI, AWS Bedrock (Claude), and a React frontend."
+    - Designed for AWS Lambda with API Gateway, or ECS and Fargate.
+    - Ran stakeholder meetings and wrote audit-ready documentation.
   stack:
     - Python
     - FastAPI

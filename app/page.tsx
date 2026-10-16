@@ -40,9 +40,9 @@ import { HeroStage } from "@/components/hero/HeroStage";
 import { CloudField } from "@/components/sky/CloudField";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "AI Engineer & Researcher",
+  title: "AI Engineer and Data Engineer",
   description:
-    "Md Kaif Afran Khan — AI engineer and researcher working on quantum machine learning for high-energy physics, GNN baselines, and shipped web systems.",
+    "Md Kaif Afran Khan is an AI engineer, data engineer, and researcher in Dhaka, Bangladesh. He builds AI and data systems and studies quantum machine learning.",
   path: "/",
 });
 
@@ -85,7 +85,6 @@ export default async function HomePage() {
     "@graph": [buildWebSiteJsonLd(person), buildPersonJsonLd(person, contact)],
   };
 
-  const roles = person.roles.length > 0 ? person.roles : [person.role];
 
   return (
     <>
@@ -112,9 +111,9 @@ export default async function HomePage() {
                   brackets
                   className="h-full"
                 >
-                  <HeroIntro name={person.name} roles={roles} />
+                  <HeroIntro name={person.name} />
                   <p className="mt-6 max-w-xl text-base leading-relaxed text-fg-muted md:text-lg">
-                    Graph learning, quantum ML, and full-stack apps. Pick your side.
+                    Also a project manager and researcher. I build AI systems and data pipelines, and I study quantum machine learning. Pick the side you came for.
                   </p>
                   <div className="mt-6">
                     <p className="font-mono text-xs uppercase tracking-widest text-blue-dark">
@@ -140,7 +139,7 @@ export default async function HomePage() {
                     </div>
                   </div>
                   <div className="mt-8 border-t border-border pt-4">
-                    <Meta items={[person.location ?? "—"]} />
+                    <Meta items={[person.location ?? ""]} />
                   </div>
                 </BentoCard>
               </div>
@@ -211,7 +210,7 @@ export default async function HomePage() {
               eyebrow="Split"
               pulse
               title="Industry. Academia."
-              description="Same person. Different framing."
+              description="Same person, two focus areas."
               className="max-w-2xl"
             />
           </Reveal>
@@ -230,10 +229,10 @@ export default async function HomePage() {
                 >
                   <div className="flex h-full flex-col">
                     <h3 className="text-2xl font-medium tracking-tight text-fg md:text-3xl">
-                      Engineering.
+                      Engineering and delivery.
                     </h3>
                     <p className="mt-4 text-base leading-relaxed text-fg-muted">
-                      Production AI, data, and web systems.
+                      Production AI, data pipelines, and full-stack apps.
                     </p>
                     <div className="mt-auto flex items-center gap-2 pt-6 font-mono text-xs uppercase tracking-widest text-blue-dark">
                       View industry <ArrowRight className="h-3.5 w-3.5" />
@@ -254,10 +253,10 @@ export default async function HomePage() {
                 >
                   <div className="flex h-full flex-col">
                     <h3 className="text-2xl font-medium tracking-tight text-fg md:text-3xl">
-                      Research.
+                      Quantum and ML research.
                     </h3>
                     <p className="mt-4 text-base leading-relaxed text-fg-muted">
-                      Publications, talks, and thesis work.
+                      Papers, preprints, and thesis work.
                     </p>
                     <div className="mt-auto flex items-center gap-2 pt-6 font-mono text-xs uppercase tracking-widest text-blue-dark">
                       View academia <ArrowRight className="h-3.5 w-3.5" />
@@ -360,7 +359,7 @@ export default async function HomePage() {
               eyebrow="Contact"
               pulse
               title="Get in touch."
-              description="Research, engineering, or collaboration."
+              description="Have a project, a role, or a research idea? Say hello."
               className="max-w-2xl"
             />
           </Reveal>
@@ -421,7 +420,7 @@ export default async function HomePage() {
                     <Meta
                       tone="dark"
                       items={[
-                        contact.location ?? "—",
+                        contact.location ?? "",
                         "Remote / on-site",
                         "UTC+6",
                       ]}

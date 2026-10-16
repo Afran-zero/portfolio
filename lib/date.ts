@@ -12,5 +12,5 @@ export function formatRange(
   start: string | null | undefined,
   end: string | null | undefined,
 ): string {
-  return `${formatYear(start)} — ${formatYear(end)}`;
+  return `${formatYear(start)} to ${formatYear(end)}`;
 }

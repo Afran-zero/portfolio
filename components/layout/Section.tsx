@@ -19,8 +19,8 @@ const spacingClasses = {
 };
 
 const toneClasses = {
-  default: "bg-bg text-fg",
-  soft: "bg-blue-50 text-fg",
+  default: "text-fg",  // transparent: the page sky shows through
+  soft: "bg-blue-soft/60 text-fg",
   dark: "bg-fg text-fg-on-dark",
   navy: "bg-gradient-to-b from-blue-dark via-[#07225a] to-[#04102e] text-fg-on-dark",
   sky: "bg-sky text-fg",

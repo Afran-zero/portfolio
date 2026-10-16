@@ -18,8 +18,8 @@ export const ContactPayloadSchema = z.object({
   name: z
     .string()
     .trim()
-    .min(1, "Name must be 1–80 characters.")
-    .max(80, "Name must be 1–80 characters.")
+    .min(1, "Name must be 1 to 80 characters.")
+    .max(80, "Name must be 1 to 80 characters.")
     .regex(
       NAME_RE,
       "Use letters, numbers, spaces, and basic punctuation only.",
@@ -32,8 +32,8 @@ export const ContactPayloadSchema = z.object({
   message: z
     .string()
     .trim()
-    .min(1, "Message must be 1–2000 characters.")
-    .max(2000, "Message must be 1–2000 characters."),
+    .min(1, "Message must be 1 to 2000 characters.")
+    .max(2000, "Message must be 1 to 2000 characters."),
   /**
    * Honeypot. Real users never fill this; bots that scrape the DOM and
    * submit every input usually do. Must be empty.

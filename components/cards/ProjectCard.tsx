@@ -67,7 +67,7 @@ export function ProjectCard({ project, featured = false, flush = false, classNam
         <div className="relative -mx-6 -mt-6 mb-4 aspect-video overflow-hidden border-b border-border bg-blueprint">
           <Image
             src={project.image}
-            alt={project.image_alt ?? `${project.name} — screenshot`}
+            alt={project.image_alt ?? `${project.name}, screenshot`}
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
             className="object-cover"
@@ -90,7 +90,7 @@ export function ProjectCard({ project, featured = false, flush = false, classNam
       {project.impact && (
         <p className="mt-3 text-sm leading-relaxed text-fg">
           <span className="font-mono text-xs uppercase tracking-widest text-blue">
-            Impact —{" "}
+            Impact:{" "}
           </span>
           {project.impact}
         </p>
@@ -108,7 +108,7 @@ export function ProjectCard({ project, featured = false, flush = false, classNam
             <Link
               href={`/industry/projects/${project.slug}`}
               className="inline-flex h-11 items-center gap-1.5 px-3 font-mono text-xs uppercase tracking-widest text-blue-dark transition-colors hover:text-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2"
-              aria-label={`${project.name} — case study`}
+              aria-label={`${project.name}, case study`}
             >
               Case study →
             </Link>

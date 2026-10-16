@@ -1,58 +1,86 @@
 import { cn } from "@/lib/utils";
+import { CLOUD_ART, type CloudArt } from "./cloud-art";
 
 /**
- * CloudField — decorative cloud SVG layer for the home page sky background.
+ * CloudField — decorative clouds for the home page sky.
  *
- * Renders 3 SVG cloud shapes positioned at the top of the section,
- * drifting at different speeds. Pointer-events disabled so it never
- * interferes with underlying CTAs. SVG (not raster) so it stays crisp on
- * any DPI and inherits the gradient color via fill="white" + filter blur.
- *
- * Used inside a Section with `tone="sky"` — the .bg-sky gradient supplies
- * the wash; this layer adds visible cloud shapes on top.
+ * The shapes are traced from the reference cloud artwork (see cloud-art.ts):
+ * a white silhouette with light-blue shading. A soft blue shadow sits under
+ * each cloud, and each one drifts with the cloud-drift keyframes.
+ * Pure SVG, pointer-events disabled.
  */
+
+const SHADING = "#cde5f7";
+
+function Cloud({ art }: { art: CloudArt }) {
+  return (
+    <svg
+      viewBox={`0 0 ${art.w} ${art.h}`}
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-full w-full drop-shadow-[0_6px_6px_rgba(20,90,170,0.28)]"
+    >
+      <path d={art.sil} fill="#ffffff" />
+      {art.shades.map((d, i) => (
+        <path key={i} d={d} fill={SHADING} />
+      ))}
+    </svg>
+  );
+}
+
+// Clouds in three depth layers. Back clouds are small, faint, and slightly
+// soft, so they read as far away. Front clouds are the largest and sharpest.
+// Indices refer to CLOUD_ART (largest first). Positions are percentages of the
+// sky band, so the clouds spread across the width instead of sitting in a row.
+type Layer = { art: number; left: string; top: string; width: string; speed: "a" | "b" };
+
+const BACK: Layer[] = [
+  { art: 5, left: "62%", top: "10%", width: "w-20", speed: "b" },
+  { art: 4, left: "4%", top: "80%", width: "w-24", speed: "b" },
+  { art: 5, left: "88%", top: "62%", width: "w-16", speed: "a" },
+];
+const MID: Layer[] = [
+  { art: 3, left: "50%", top: "2%", width: "w-36", speed: "a" },
+  { art: 2, left: "76%", top: "34%", width: "w-44", speed: "b" },
+  { art: 4, left: "46%", top: "70%", width: "w-32", speed: "a" },
+];
+const FRONT: Layer[] = [
+  { art: 0, left: "2%", top: "-6%", width: "w-72", speed: "a" },
+  { art: 1, left: "70%", top: "-2%", width: "w-64", speed: "b" },
+];
+
+const LAYER_STYLE = {
+  back: "z-0 opacity-60 blur-[1px]",
+  mid: "z-0 opacity-85",
+  front: "z-0 opacity-100",
+};
+
 export function CloudField({ className }: { className?: string }) {
   return (
     <div
       aria-hidden="true"
       className={cn(
-        "pointer-events-none absolute inset-x-0 top-0 z-0 h-64 overflow-hidden",
+        "pointer-events-none absolute inset-x-0 top-0 z-0 h-72 overflow-hidden",
         className,
       )}
     >
-      <svg
-        className="absolute -top-2 left-[6%] h-24 w-40 animate-cloud-drift opacity-90"
-        viewBox="0 0 160 96"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <ellipse cx="40" cy="60" rx="38" ry="22" fill="white" />
-        <ellipse cx="80" cy="48" rx="32" ry="22" fill="white" />
-        <ellipse cx="120" cy="58" rx="30" ry="20" fill="white" />
-        <ellipse cx="62" cy="70" rx="44" ry="16" fill="white" />
-      </svg>
-      <svg
-        className="absolute -top-4 left-[42%] h-16 w-28 animate-cloud-drift-slow opacity-80"
-        viewBox="0 0 112 64"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <ellipse cx="28" cy="40" rx="26" ry="16" fill="white" />
-        <ellipse cx="58" cy="32" rx="22" ry="16" fill="white" />
-        <ellipse cx="86" cy="40" rx="22" ry="14" fill="white" />
-        <ellipse cx="44" cy="48" rx="30" ry="12" fill="white" />
-      </svg>
-      <svg
-        className="absolute top-2 right-[8%] h-20 w-32 animate-cloud-drift opacity-85"
-        viewBox="0 0 128 80"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <ellipse cx="32" cy="50" rx="30" ry="18" fill="white" />
-        <ellipse cx="64" cy="40" rx="26" ry="18" fill="white" />
-        <ellipse cx="96" cy="50" rx="24" ry="16" fill="white" />
-        <ellipse cx="50" cy="60" rx="34" ry="14" fill="white" />
-      </svg>
+      {[
+        ...BACK.map((l) => ({ ...l, depth: "back" as const })),
+        ...MID.map((l) => ({ ...l, depth: "mid" as const })),
+        ...FRONT.map((l) => ({ ...l, depth: "front" as const })),
+      ].map((l, i) => {
+        const art = CLOUD_ART[l.art];
+        if (!art) return null;
+        const drift = l.speed === "a" ? "animate-cloud-drift" : "animate-cloud-drift-slow";
+        return (
+          <div
+            key={i}
+            className={cn("absolute h-auto", l.width, drift, LAYER_STYLE[l.depth])}
+            style={{ left: l.left, top: l.top, aspectRatio: `${art.w} / ${art.h}` }}
+          >
+            <Cloud art={art} />
+          </div>
+        );
+      })}
     </div>
   );
 }

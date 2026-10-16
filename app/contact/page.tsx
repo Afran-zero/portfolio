@@ -16,7 +16,7 @@ import { getContact, getPerson } from "@/lib/content";
 export const metadata: Metadata = buildPageMetadata({
   title: "Contact",
   description:
-    "Contact Md Kaif Afran Khan for research collaboration, engineering work, or any other inquiry. Email, GitHub, and LinkedIn.",
+    "Contact Md Kaif Afran Khan about AI engineering, data projects, or research collaboration. Send a message or email directly.",
   path: "/contact",
   type: "profile",
   images: ["/og/contact.png"],
@@ -36,7 +36,7 @@ export default async function ContactPage() {
             eyebrow="Contact"
             pulse
             title="Get in touch."
-            description="Research, engineering, or collaboration."
+            description="Have a project, a role, or a research idea? Say hello."
           />
           <Grid cols={3} className="mt-12">
             {contact.email && (
@@ -45,7 +45,7 @@ export default async function ContactPage() {
                 <div className="mt-4 flex flex-1 items-center">
                   <a
                     href={`mailto:${contact.email}`}
-                    aria-label={`Email — ${contact.email}`}
+                    aria-label={`Email: ${contact.email}`}
                     className="inline-flex h-12 w-12 items-center justify-center border border-border bg-bg text-fg btn-press hover:border-blue hover:bg-blue-50 hover:text-blue-dark"
                   >
                     <Mail className="h-6 w-6" aria-hidden="true" />
@@ -64,7 +64,7 @@ export default async function ContactPage() {
                     href={contact.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`GitHub — ${person.name}`}
+                    aria-label={`GitHub: ${person.name}`}
                     className="inline-flex h-12 w-12 items-center justify-center border border-border bg-bg text-fg btn-press hover:border-blue hover:bg-blue-50 hover:text-blue-dark"
                   >
                     <Github className="h-6 w-6" aria-hidden="true" />
@@ -83,7 +83,7 @@ export default async function ContactPage() {
                     href={contact.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`LinkedIn — ${person.name}`}
+                    aria-label={`LinkedIn: ${person.name}`}
                     className="inline-flex h-12 w-12 items-center justify-center border border-border bg-bg text-fg btn-press hover:border-blue hover:bg-blue-50 hover:text-blue-dark"
                   >
                     <Linkedin className="h-6 w-6" aria-hidden="true" />

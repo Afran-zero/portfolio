@@ -174,7 +174,7 @@ export function ContactForm({ tone = "light" }: Props) {
           )}
         >
           <Check aria-hidden="true" className="h-4 w-4" />
-          Message sent. I'll reply to your email shortly.
+          Thanks, your message is sent. I'll reply by email.
         </p>
       )}
 

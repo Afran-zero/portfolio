@@ -1,18 +1,20 @@
 # Person — used as the single source of truth across home, /contact, JSON-LD.
 # Schema: PersonSchema — see lib/schemas.ts.
+# Voice: friendly, first person on the site. Third person in search metadata.
 
 name: Md Kaif Afran Khan
 short_name: KAIF
-role: AI Engineer & Researcher
+role: AI Engineer & Data Engineer
 roles:
   - AI Engineer
-  - Researcher
-  - Project Manager
   - Data Engineer
+  - Project Manager
+  - Researcher
 bio: >-
-  I build graph-learning models, run quantum machine learning experiments on
-  HEP data, and ship full-stack applications. The split on this site reflects
-  that — industry for engineering, academia for research.
+  Hi, I'm Kaif. I build AI systems, data pipelines, and full-stack apps, and
+  I research quantum machine learning and quantum key distribution. My project
+  management work keeps the technical side tied to what people actually need.
+  I'm based in Dhaka, and I'm always glad to talk about a good idea.
 location: Dhaka, Bangladesh
 pronouns: he/him
 portrait_path: /images/profile/profile.png

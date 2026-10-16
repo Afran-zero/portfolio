@@ -36,7 +36,7 @@ import {
 export const metadata: Metadata = buildPageMetadata({
   title: "Academic",
   description:
-    "Academic profile of Md Kaif Afran Khan — research in machine learning, quantum computing, and graph learning, plus publications and thesis.",
+    "Research by Md Kaif Afran Khan on quantum key distribution, quantum machine learning, and large language models. Papers, preprints, and thesis work.",
   path: "/academic",
   images: ["/og/academic.png"],
 });
@@ -73,7 +73,7 @@ export default async function AcademicPage() {
       buildPersonJsonLd(person, contact),
       {
         "@type": "ItemList",
-        name: `${person.name} — Academic Profile`,
+        name: `${person.name}: Academic Profile`,
         itemListElement: education.slice(0, 10).map((ed, i) => ({
           "@type": "ListItem",
           position: i + 1,
@@ -98,7 +98,7 @@ export default async function AcademicPage() {
   };
 
   return (
-    <>
+    <div className="bg-graph">
       <StructuredData data={academicJsonLd} />
 
       {/* ---- Hero ---- */}
@@ -111,7 +111,7 @@ export default async function AcademicPage() {
             <SectionHeading
               eyebrow="Research Profile"
               pulse
-              title="Where the work points."
+              title="What I work on."
             />
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-fg-muted md:text-lg">
               {research.profile}
@@ -179,7 +179,7 @@ export default async function AcademicPage() {
               eyebrow="Publications"
               pulse
               title="Papers."
-              description="FSM-LoRA (ICAISF 2026), TAL-GRN (Under Review), persona multiplicity (thesis)."
+              description="Two IEEE papers in 2026, two papers under review, and thesis work."
             />
           </Reveal>
           <div className="mt-10 space-y-6">
@@ -276,7 +276,7 @@ export default async function AcademicPage() {
                   tone="dark"
                   eyebrow="Quantum Papers"
                   pulse
-                  title="Quantum, ongoing."
+                  title="Ongoing quantum work."
                   description="QML entanglement pathways and a quantum-adaptive GAT."
                 />
               </Reveal>
@@ -317,7 +317,18 @@ export default async function AcademicPage() {
                     </span>
                     <div className="md:col-span-10">
                       <p className="text-base font-medium text-fg">
-                        {conf.name}
+                        {conf.url ? (
+                          <a
+                            href={conf.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline decoration-border underline-offset-4 hover:text-blue-dark"
+                          >
+                            {conf.name}
+                          </a>
+                        ) : (
+                          conf.name
+                        )}
                         {conf.location && (
                           <span className="text-fg-muted"> · {conf.location}</span>
                         )}
@@ -400,7 +411,7 @@ export default async function AcademicPage() {
       {/* ---- Contact ---- */}
       <ContactBand
         title="Open to research collaboration."
-        description="MSc, MRes, PhD, and joint research."
+        description="Open to MSc, MRes, and PhD supervision, plus research collaboration."
         email={contact.email}
         github={contact.github}
         linkedin={contact.linkedin}
@@ -412,6 +423,6 @@ export default async function AcademicPage() {
           <BackLink href="/">Back home</BackLink>
         </Container>
       </Section>
-    </>
+    </div>
   );
 }

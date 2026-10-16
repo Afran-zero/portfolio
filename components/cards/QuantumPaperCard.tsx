@@ -29,7 +29,7 @@ export function QuantumPaperCard({ project, className }: Props) {
         "group relative flex h-full flex-col border border-border bg-bg card-lift",
         className,
       )}
-      aria-label={`${project.title} — ongoing quantum research`}
+      aria-label={`${project.title}, ongoing quantum research`}
     >
       {/* Faux circuit header — self-contained, no asset. */}
       <div className="relative h-36 overflow-hidden border-b border-border bg-blueprint">
@@ -114,7 +114,7 @@ export function QuantumPaperCard({ project, className }: Props) {
               {project.setup?.split(/[,;]/)[0]?.trim() ?? "Simulator"}
             </span>
             <span className="font-mono text-micro uppercase tracking-widest text-fg-muted">
-              [TBD: preprint status]
+              Ongoing
             </span>
           </div>
         </div>

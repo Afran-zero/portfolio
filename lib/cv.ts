@@ -20,7 +20,7 @@ export const cvVariants: readonly CvVariant[] = [
     audience: "Research / Grad school",
     description:
       "Publications, thesis, ongoing research lines, conferences, " +
-      "academic projects. For research roles, PhD / MSc applications, " +
+      "academic projects. For research roles, MSc, MRes, and PhD applications, " +
       "grant reviewers.",
     pdf: "academic-cv.pdf",
   },

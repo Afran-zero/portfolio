@@ -50,9 +50,7 @@ export function EducationTimeline({ items }: Props) {
               <ul className="mt-2 space-y-1 text-sm leading-relaxed text-fg-muted">
                 {item.highlights.map((h, j) => (
                   <li key={j} className="flex gap-2">
-                    <span aria-hidden="true" className="select-none text-blue">
-                      —
-                    </span>
+                    <span aria-hidden="true" className="select-none text-blue">•</span>
                     <span>{h}</span>
                   </li>
                 ))}

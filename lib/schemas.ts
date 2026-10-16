@@ -204,6 +204,7 @@ export const ConferenceSchema = z.object({
   name: z.string(),
   contribution: z.string(),
   location: z.string().optional(),
+  url: z.string().url().optional(),
 });
 
 export type Conference = z.infer<typeof ConferenceSchema>;

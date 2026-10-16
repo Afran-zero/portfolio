@@ -32,7 +32,7 @@ export function EducationAcademic({ items }: Props) {
             className="absolute -left-1.5 top-0 h-3 w-3 border-2 border-blue bg-bg-soft shadow-[0_0_8px_rgb(23_105_255_/_0.45)]"
           />
           <Eyebrow>
-            {formatYear(edu.start)} — {formatYear(edu.end)}
+            {formatYear(edu.start)} to {formatYear(edu.end)}
           </Eyebrow>
           <h3 className="mt-2 text-xl font-medium tracking-tight text-fg md:text-2xl">
             {edu.degree}
@@ -54,7 +54,7 @@ export function EducationAcademic({ items }: Props) {
           {edu.thesis && (
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-fg-muted">
               <span className="font-mono text-xs uppercase tracking-widest text-blue">
-                Thesis —{" "}
+                Thesis:{" "}
               </span>
               {edu.thesis}
             </p>
@@ -63,9 +63,7 @@ export function EducationAcademic({ items }: Props) {
             <ul className="mt-3 max-w-2xl space-y-1 text-sm leading-relaxed text-fg">
               {edu.highlights.map((h, i) => (
                 <li key={i} className="flex gap-2">
-                  <span aria-hidden="true" className="select-none text-blue">
-                    —
-                  </span>
+                  <span aria-hidden="true" className="select-none text-blue">•</span>
                   <span>{h}</span>
                 </li>
               ))}

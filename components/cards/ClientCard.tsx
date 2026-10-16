@@ -14,7 +14,7 @@ function formatYear(iso: string | null | undefined): string {
 }
 
 function formatRange(start: string | undefined, end: string | null | undefined): string {
-  return `${formatYear(start)} — ${formatYear(end)}`;
+  return `${formatYear(start)} to ${formatYear(end)}`;
 }
 
 /**
@@ -45,7 +45,7 @@ export function ClientCard({ entry, className }: Props) {
         <ul className="mt-3 space-y-1 text-sm leading-relaxed text-fg">
           {entry.highlights.map((highlight) => (
             <li key={highlight} className="flex gap-2">
-              <span aria-hidden="true" className="select-none text-blue">—</span>
+              <span aria-hidden="true" className="select-none text-blue">•</span>
               <span>{highlight}</span>
             </li>
           ))}

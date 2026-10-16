@@ -20,6 +20,16 @@
 
   --border: #d9dee8;
 
+  /* Page background: sky blue at the top, fading to white at the bottom. */
+  --sky-page: linear-gradient(
+    180deg,
+    #d9ecfa 0%,
+    #e7f4fd 24%,
+    #f1f8fe 50%,
+    #f8fbff 76%,
+    #ffffff 100%
+  );
+
   /* ---- Radius ---- */
   --radius-sm: 2px;
   --radius-md: 6px;

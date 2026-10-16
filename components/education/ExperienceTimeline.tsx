@@ -104,9 +104,7 @@ export function ExperienceTimeline({ items }: Props) {
                 <ul className="mt-3 max-w-2xl space-y-1 text-sm leading-relaxed text-fg">
                   {item.highlights.map((h, idx) => (
                     <li key={idx} className="flex gap-2">
-                      <span aria-hidden="true" className="select-none text-blue">
-                        —
-                      </span>
+                      <span aria-hidden="true" className="select-none text-blue">•</span>
                       <span>{h}</span>
                     </li>
                   ))}

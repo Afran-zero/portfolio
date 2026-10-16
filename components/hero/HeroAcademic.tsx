@@ -1,4 +1,5 @@
 import { Container } from "@/components/layout/Container";
+import { BentoCard } from "@/components/layout/BentoCard";
 import { Grid } from "@/components/layout/Grid";
 import { Section } from "@/components/layout/Section";
 import { Button } from "@/components/ui/Button";
@@ -19,15 +20,16 @@ export function HeroAcademic({ person, research }: Props) {
   const firstInterest = research.interests[0] ?? "Machine Learning";
   const secondInterest = research.interests[1] ?? "Quantum ML";
   return (
-    <Section spacing="lg" className="overflow-hidden bg-blueprint">
+    <Section spacing="sm" className="overflow-hidden">
       <Container className="relative z-10">
         <Grid className="items-center">
           <div className="md:col-span-7">
-            <Eyebrow pulse>Academic</Eyebrow>
+            <BentoCard tone="blueprint" brackets className="h-full">
+            <Eyebrow pulse className="border border-blue/40 bg-white px-3 py-1.5 text-sm shadow-[0_0_18px_-4px_rgb(23_105_255/0.5)]">Academic</Eyebrow>
             <h1 className="mt-6 text-display font-medium leading-[0.98] tracking-tight text-fg">
               Quantum and ML research.
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-fg-muted md:text-lg">
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-fg/80 md:text-xl">
               Research Assistant at the NSU Center of Quantum Computing. I study {firstInterest.toLowerCase()} and {secondInterest.toLowerCase()}.
             </p>
             <div className="mt-10">
@@ -49,6 +51,7 @@ export function HeroAcademic({ person, research }: Props) {
                 Download Academic CV
               </Button>
             </div>
+            </BentoCard>
           </div>
 
           {/* Right column — hero image + identity block (mirrors HeroIndustry) */}

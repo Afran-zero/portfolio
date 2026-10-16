@@ -8,18 +8,19 @@ import { Grid } from "@/components/layout/Grid";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { cvVariants } from "@/lib/cv";
+import { SITE_URL } from "@/lib/seo/person-jsonld";
 
 export const metadata: Metadata = {
   title: "CV",
   description:
-    "Download the academic, industry, or master CV of Md Kaif Afran Khan — AI engineer, researcher, and software developer based in Dhaka, Bangladesh.",
-  alternates: { canonical: "https://kaif.dev/cv" },
+    "Download the academic, industry, or master CV of Md Kaif Afran Khan, an AI engineer, data engineer, and researcher in Dhaka, Bangladesh.",
+  alternates: { canonical: `${SITE_URL}/cv` },
   openGraph: {
-    title: "CV — Md Kaif Afran Khan",
+    title: "CV: Md Kaif Afran Khan",
     description:
       "Download the academic, industry, or master CV of Md Kaif Afran Khan.",
-    url: "https://kaif.dev/cv",
-    siteName: "Kaif — AI Engineer & Researcher",
+    url: `${SITE_URL}/cv`,
+    siteName: "Kaif | AI Engineer and Data Engineer",
     locale: "en_US",
     type: "website",
   },

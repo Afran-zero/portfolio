@@ -41,7 +41,7 @@ export function LiveProjectCard({ project, className }: Props) {
         href={project.link}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={`Visit ${project.name} — ${host}`}
+        aria-label={`Visit ${project.name}, ${host}`}
         className="relative block overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2"
       >
         {/* Chrome bar */}
@@ -101,7 +101,7 @@ export function LiveProjectCard({ project, className }: Props) {
         {project.impact && (
           <p className="mt-3 text-sm leading-relaxed text-fg">
             <span className="font-mono text-micro uppercase tracking-widest text-blue">
-              Impact —{" "}
+              Impact:{" "}
             </span>
             {project.impact}
           </p>

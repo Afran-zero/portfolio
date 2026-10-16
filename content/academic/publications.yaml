@@ -2,9 +2,24 @@
 #   Published | Accepted | Under Review | Preprint
 # Schema: PublicationSchema — id, title, authors[], venue, year (int), status (enum),
 #                              doi?, arxiv? (url), paper_url? (url), abstract?
-# Sourced from g:\portfolio\base data.md.
+# Sourced from base data.md.
 
 # ---------- Published (2026) ----------
+
+- id: gdp-arima-ml-2026
+  title: >-
+    Explainable Hybrid ARIMA and ML Forecasting of Bangladesh's GDP: Sectoral
+    Energy Consumption and Carbon Emission Dynamics
+  authors:
+    - M. K. A. Khan
+  venue: 5th IEEE International Conference on Robotics, Automation, Artificial Intelligence and Internet of Things (RAAICON 2026)
+  year: 2026
+  status: Published
+  abstract: >-
+    A hybrid residual learning ensemble. ARIMA handles the trend, and XGBoost,
+    Random Forest, GBM, and SVR model the residuals, with SHAP for
+    explainability. It reached a best MAPE of 7.60% and beat both ARIMA and the
+    standalone ML baselines.
 
 - id: fsm-lora-2026
   title: >-
@@ -16,10 +31,10 @@
   year: 2026
   status: Published
   abstract: >-
-    A Finite State Machine controller dynamically skips redundant backward
-    passes during LoRA fine-tuning. Skipped 15–58% of backward passes,
-    up to 58.58% wall-clock time reduction, accuracy within ±0.5% of
-    standard LoRA. Evaluated on Phi-2, Qwen2.5-3B, and OpenLLaMA-3B.
+    A finite state machine decides when to skip redundant backward passes
+    during LoRA fine-tuning. It skips 15 to 58% of backward passes and cuts
+    wall-clock time by up to 58.58%, with accuracy within 0.5% of standard
+    LoRA. Tested on Phi-2, Qwen2.5-3B, and OpenLLaMA-3B.
 
 # ---------- Under Review ----------
 
@@ -33,9 +48,23 @@
   year: 2026
   status: Under Review
   abstract: >-
-    Adaptive k and learned edge prediction / pruning on a long-tailed,
-    imbalanced multi-class medical-image dataset. Improves minority-class
-    F1 over the graph-representation baseline by [TBD: percentage delta].
+    Adaptive k and learned edge prediction and pruning on a long-tailed,
+    imbalanced medical image dataset. The model improves F1 on the rare
+    classes.
+
+- id: iccit-llm-vs-ml-2026
+  title: >-
+    Benchmarking Large Language Models Against Classical Machine Learning for
+    Undergraduate Academic Performance Prediction
+  authors:
+    - M. K. A. Khan
+  venue: 29th International Conference on Computer and Information Technology (ICCIT 2026)
+  year: 2026
+  status: Under Review
+  abstract: >-
+    Seven classical ML models and five LLMs were tested on 872 student records,
+    using zero-shot, few-shot, and LoRA setups. Extra Trees reached 88.57%
+    accuracy, and the best fine-tuned LLM, Gemma-2-9B-IT, reached 56.57%.
 
 - id: persona-multiplicity-moral
   title: >-
@@ -48,40 +77,34 @@
   year: 2026
   status: Preprint
   abstract: >-
-    A multi-persona moral reasoning framework that generates dynamic
-    personas, performs independent reasoning, and aggregates via a
-    deliberative synthesis (not simple voting). Metrics: moral conflict
-    score, consensus strength, stakeholder / principle coverage.
-    Outperforms single-shot baselines on stakeholder and consequence
-    coverage.
+    One LLM plays several moral personas, reasons through each one, and then
+    combines the answers through deliberative synthesis instead of a vote.
+    It covers more stakeholders and consequences than a single-shot baseline.
 
-# ---------- Thesis-stage (CSE299 / earlier) ----------
+# ---------- Thesis-stage (earlier work) ----------
 
 - id: benemo-cse299
   title: >-
-    BENEMO — Bangla Multimodal Emotion Detection (Early Hybrid Approach)
+    BENEMO: Bangla Multimodal Emotion Detection (Early Hybrid Approach)
   authors:
     - M. K. A. Khan
-  venue: North South University — CSE299
+  venue: North South University, CSE299
   year: 2024
   status: Preprint
   abstract: >-
-    CSE299 thesis on Bangla multimodal (speech + text) emotion recognition.
-    Hybrid early fusion: speech features (MFCCs / wav2vec) plus Bangla text
-    embeddings, evaluated on an internal acted-emotion dataset.
+    CSE299 thesis on Bangla emotion recognition from speech and text, using
+    early fusion of both signals.
   paper_url: https://github.com/Afran-zero/BENEMO-BANGLA-MULTIMODAL-EMOTION-DETECTION-EARLY-HYBRID-APPROACH
 
 - id: knn-heuristics
   title: >-
-    Comparative Analysis of Heuristic and Dynamic Methods for Optimizing
-    the K Parameter in K-Nearest Neighbors
+    Heuristic and Dynamic Methods for Choosing K in K-Nearest Neighbors
   authors:
     - M. K. A. Khan
   venue: Internal report (not published)
   year: 2025
   status: Preprint
   abstract: >-
-    Compares heuristic K choices (odd integers around sqrt(N)) with dynamic
-    K-selection methods on standard tabular classification benchmarks.
-    [TBD: best dynamic method's mean accuracy gain over fixed K].
+    Compares rule-of-thumb choices of K with dynamic K-selection methods on
+    standard tabular benchmarks.
   paper_url: https://github.com/Afran-zero/Comparative-Analysis-of-Heuristic-and-Dynamic-Methods-for-Optimizing-the-K-Parameter

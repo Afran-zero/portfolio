@@ -1,6 +1,6 @@
 # Industry experience — reverse chronological. Current roles use end: null.
 # Schema: ExperienceSchema — id, role, company, location?, start (iso), end (nullable), description, stack?, highlights?
-# Sourced from g:\portfolio\base data.md.
+# Sourced from base data.md.
 
 - id: project-manager-trainee-4excelerate-2026
   role: Project Manager Trainee (Intern)
@@ -9,26 +9,24 @@
   start: 2026-08-01
   end: 2026-10-31
   description: >-
-    One-month project management traineeship at 4excelerate.org. Ran a
-    0-Day AI workshop for the company end-to-end, then produced
-    comprehensive project documentation and presented it to stakeholders.
+    A one-month project management traineeship. I ran a 0-Day AI workshop for
+    the organization from start to finish, then wrote the project documentation
+    and presented it to stakeholders.
   highlights:
     - Designed and facilitated the 0-Day AI workshop.
-    - Drafted comprehensive project documentation and presented it to
-      stakeholders.
-    - "PM-track scope: planning, stakeholder communication, documentation.\r"
+    - Wrote the project documentation and presented it to stakeholders.
+    - Covered scope, planning, stakeholder communication, and documentation.
 
 - id: research-assistant-nsu-mahdy-2025
   role: Research Assistant
-  company: North South University — NSU Center of Quantum Computing (NCQC)
+  company: NSU Center of Quantum Computing (NCQC)
   location: Dhaka, Bangladesh
-  start: 2025-10-01
+  start: 2026-10-01
   end: null
   description: >-
-    Research assistant under Dr. Mahdy Rahman Chowdhury (Professor, ECE;
-    Founding Director, NSU Center of Quantum Computing). Working on QKD
-    (E91 / BBM92) and Quantum Machine Learning (QML) projects within
-    the NSU Optics, Quantum & Machine Learning group.
+    I work with Dr. Mahdy Rahman Chowdhury (Professor, ECE, and Founding
+    Director of NCQC) on quantum key distribution and quantum machine learning.
+    The work sits inside the NSU Optics, Quantum and Machine Learning group.
   stack:
     - Qiskit
     - PennyLane
@@ -36,23 +34,22 @@
     - QKD (E91, BBM92)
     - Quantum Machine Learning
   highlights:
-    - "Supervisor: Dr. Mahdy Rahman Chowdhury (ECE, NSU).\r"
+    - "Supervisor: Dr. Mahdy Rahman Chowdhury, ECE, North South University."
     - "Lab site: https://sites.google.com/view/nsuopticslab/home"
-    - "Threads: QKD (E91, BBM92) and QML.\r"
+    - "Research threads: QKD (E91, BBM92) and QML."
 
 - id: ai-engineer-data-island-2025
-  role: AI Engineer & Project Management Intern
+  role: AI Engineer and Project Management Intern
   company: The Data Island
   location: Dhaka, Bangladesh
   start: 2025-01-01
   end: 2026-01-01
   description: >-
-    Built Aselo, an automated form-filling system for the Aselo crisis-line
-    platform. The pipeline extracts Child, Category, and Summary fields from
-    S3-hosted transcripts via AWS Bedrock (Anthropic Claude) and surfaces
-    them in a real-time React chat view, with MFA session support.
-    Co-managed the project management track — ran stakeholder meetings, deal
-    discussions, and audit documentation.
+    I built Aselo, an automated form-filling system for a crisis-line platform.
+    It pulls Child, Category, and Summary fields out of S3 transcripts with AWS
+    Bedrock (Claude), then shows them in a real-time React chat. I also co-managed
+    the project management track, ran stakeholder meetings, and wrote the audit
+    documentation.
   stack:
     - Python
     - FastAPI
@@ -62,11 +59,9 @@
     - AWS Bedrock
     - Claude
   highlights:
-    - "End-to-end pipeline: S3 → FastAPI → Bedrock → S3 + React frontend."
-    - Architecture ready for AWS Lambda + API Gateway (serverless) or
-      ECS/Fargate (containerized) deployment.
-    - Managed stakeholder relationships and ran stakeholder / deal meetings.
-    - Created audit-ready documentation and project artifacts.
+    - "Pipeline: S3, FastAPI, Bedrock, S3, and a React frontend."
+    - Designed to run on AWS Lambda with API Gateway, or on ECS and Fargate.
+    - Ran stakeholder meetings and kept audit-ready documentation.
     - "Public code: https://github.com/Afran-zero/Aselo-Tech-Matters-main"
 
 - id: tech-lead-farhana-foundation-current
@@ -76,9 +71,9 @@
   start: 2024-01-01
   end: null
   description: >-
-    Technical lead for farhanaafrozfoundation.org since 2024. Next.js 15 +
-    Sanity CMS. Built and maintain the donation flow (QR + bank details,
-    image protection), events, impact tracking, FAQ, and team showcase.
+    I lead the technical side of the foundation's website, built on Next.js 15
+    and Sanity CMS. I built and maintain the donation flow, events, impact
+    tracking, FAQ, and team section.
   stack:
     - Next.js
     - Sanity CMS
@@ -89,7 +84,7 @@
     - Embla Carousel
   highlights:
     - "Live site: https://www.farhanaafrozfoundation.org/"
-    - Donation modal with QR / bank details and image protection.
+    - Donation page with QR and bank details, and image protection.
 
 - id: executive-ucchash-prohor-2019-2022
   role: Executive Committee Member
@@ -98,8 +93,8 @@
   start: 2019-01-01
   end: 2022-12-31
   description: >-
-    Executive committee member for UCCHASH Prohor (Dhaka) from 2019 to 2022.
-    Coordinated programs and operations across the three-year tenure.
+    I served on the executive committee of UCCHASH Prohor, an organization in Dhaka,
+    from 2019 to 2022.
   highlights:
-    - Three-year tenure (2019–2022).
-    - "Org page: https://www.facebook.com/ucchashprohor/"
+    - Three-year tenure, 2019 to 2022.
+    - "Organization page: https://www.facebook.com/ucchashprohor/"

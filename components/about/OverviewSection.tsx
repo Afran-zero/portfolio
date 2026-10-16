@@ -41,7 +41,7 @@ export function OverviewSection({
 
           <AboutPhoto
             src={person.portrait_path}
-            alt={`${person.name} — portrait`}
+            alt={`${person.name}, portrait`}
             shape="portrait"
             className="aspect-[4/5] w-full max-w-[280px] self-center"
           />
@@ -109,12 +109,12 @@ export function OverviewSection({
                 <AvailablePulse />
               </p>
               <h3 className="mt-2 text-base font-medium text-fg-on-dark md:text-lg">
-                Available for Engineering &amp; Research
+                Open to engineering and research
               </h3>
               <Meta
                 className="mt-3 !text-fg-on-dark/70"
                 items={[
-                  person.location ?? "—",
+                  person.location ?? "",
                   "Remote / On-Site",
                   "UTC+6",
                 ]}

@@ -76,7 +76,7 @@ export function PublicationCard({
   return (
     <Link
       href={href}
-      aria-label={`${publication.title} — publication`}
+      aria-label={`${publication.title}, publication`}
       className="block h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2"
     >
       {inner}
