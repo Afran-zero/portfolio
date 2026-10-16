@@ -234,6 +234,55 @@ export default async function IndustryPage() {
         </Container>
       </Section>
 
+      {/* ---- Project Management ---- */}
+      <Section spacing="md">
+        <Container>
+          <Reveal>
+            <SectionHeading
+              eyebrow="Project Management"
+              pulse
+              title="Workshops, docs, stakeholder work."
+              description="A condensed view of the PM track — 0-Day AI workshop, comprehensive documentation, and stakeholder presentations."
+              className="max-w-2xl"
+            />
+          </Reveal>
+          <Reveal delay={0.05} className="mt-10">
+            <div className="grid gap-6 md:grid-cols-3">
+              <article className="border border-border bg-bg p-6">
+                <Eyebrow>Workshops</Eyebrow>
+                <h3 className="mt-3 text-lg font-medium tracking-tight text-fg">
+                  0-Day AI Workshop
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-fg-muted">
+                  Designed and facilitated the 0-Day AI workshop for
+                  4excelerate.org during the PM traineeship.
+                </p>
+              </article>
+              <article className="border border-border bg-bg p-6">
+                <Eyebrow>Documentation</Eyebrow>
+                <h3 className="mt-3 text-lg font-medium tracking-tight text-fg">
+                  Comprehensive Project Docs
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-fg-muted">
+                  Drafted comprehensive project documentation covering scope,
+                  plan, and deliverables.
+                </p>
+              </article>
+              <article className="border border-border bg-bg p-6">
+                <Eyebrow>Stakeholders</Eyebrow>
+                <h3 className="mt-3 text-lg font-medium tracking-tight text-fg">
+                  Stakeholder Presentations
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-fg-muted">
+                  Presented plans and documentation to stakeholders; coordinated
+                  on next steps and sign-off.
+                </p>
+              </article>
+            </div>
+          </Reveal>
+        </Container>
+      </Section>
+
       {/* ---- Client Work ---- */}
       {clientWork.length > 0 && (
         <Section spacing="md">

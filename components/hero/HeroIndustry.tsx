@@ -61,6 +61,23 @@ export function HeroIndustry({ person }: Props) {
               </div>
             </div>
           </div>
+
+          {/* Right column — hero image + identity block */}
+          <div className="md:col-span-5">
+            <figure className="flex flex-col items-center text-center">
+              <img
+                src="/images/office.svg"
+                alt="Industry illustration"
+                className="h-auto w-full max-w-[360px]"
+                loading="eager"
+              />
+              <figcaption className="mt-4 font-mono text-xs uppercase tracking-widest text-fg-muted">
+                <p className="text-fg">{person.name}</p>
+                <p className="mt-1">{person.role}</p>
+                {person.location && <p className="mt-1">{person.location}</p>}
+              </figcaption>
+            </figure>
+          </div>
         </Grid>
       </Container>
     </Section>

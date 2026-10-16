@@ -2,6 +2,44 @@
 # Schema: ExperienceSchema — id, role, company, location?, start (iso), end (nullable), description, stack?, highlights?
 # Sourced from g:\portfolio\base data.md.
 
+- id: project-manager-trainee-4excelerate-2026
+  role: Project Manager Trainee (Intern)
+  company: 4excelerate.org
+  location: Remote
+  start: 2026-08-01
+  end: 2026-10-31
+  description: >-
+    One-month project management traineeship at 4excelerate.org. Ran a
+    0-Day AI workshop for the company end-to-end, then produced
+    comprehensive project documentation and presented it to stakeholders.
+  highlights:
+    - Designed and facilitated the 0-Day AI workshop.
+    - Drafted comprehensive project documentation and presented it to
+      stakeholders.
+    - PM-track scope: planning, stakeholder communication, documentation.
+
+- id: research-assistant-nsu-mahdy-2025
+  role: Research Assistant
+  company: North South University — NSU Center of Quantum Computing (NCQC)
+  location: Dhaka, Bangladesh
+  start: 2025-10-01
+  end: null
+  description: >-
+    Research assistant under Dr. Mahdy Rahman Chowdhury (Professor, ECE;
+    Founding Director, NSU Center of Quantum Computing). Working on QKD
+    (E91 / BBM92) and Quantum Machine Learning (QML) projects within
+    the NSU Optics, Quantum & Machine Learning group.
+  stack:
+    - Qiskit
+    - PennyLane
+    - Python
+    - QKD (E91, BBM92)
+    - Quantum Machine Learning
+  highlights:
+    - Supervisor: Dr. Mahdy Rahman Chowdhury (ECE, NSU).
+    - "Lab site: https://sites.google.com/view/nsuopticslab/home"
+    - Threads: QKD (E91, BBM92) and QML.
+
 - id: ai-engineer-data-island-2025
   role: AI Engineer & Project Management Intern
   company: The Data Island
