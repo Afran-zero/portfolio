@@ -1,0 +1,27 @@
+# Research profile — single source.
+# Schema: ResearchSchema — profile, interests[], methods[]
+# Sourced from g:\portfolio\base data.md.
+
+profile: >-
+  Research across machine learning, quantum computing, and graph learning.
+  Active threads: energy-efficient LoRA fine-tuning (FSM-LoRA, ICAISF 2026,
+  15–58% backward passes skipped), explainable hybrid GDP forecasting
+  (ARIMA + ML, IEEE RAAIoT 2026, best MAPE 7.60%), E91/BBM92 QKD via QML,
+  quantum-adaptive graph attention for muon regression, and multi-persona
+  moral reasoning inside a single LLM (thesis).
+interests:
+  - Machine Learning
+  - Quantum Machine Learning
+  - Quantum Key Distribution (E91, BBM92)
+  - Graph Representation Learning
+  - Multimodal AI (speech + text)
+  - Multi-Agent LLM Reasoning
+  - Explainable AI (SHAP)
+methods:
+  - LoRA fine-tuning with dynamic gradient gating
+  - Hybrid ARIMA + ML residual ensembles
+  - PennyLane / quantum kernel methods
+  - Graph attention networks (GAT)
+  - Multi-persona LLM synthesis
+  - Medallion data architecture (Bronze → Silver → Gold)
+  - AWS Bedrock (Claude) for structured extraction

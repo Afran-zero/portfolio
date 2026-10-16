@@ -1,0 +1,87 @@
+# Publications — status labels must match exactly:
+#   Published | Accepted | Under Review | Preprint
+# Schema: PublicationSchema — id, title, authors[], venue, year (int), status (enum),
+#                              doi?, arxiv? (url), paper_url? (url), abstract?
+# Sourced from g:\portfolio\base data.md.
+
+# ---------- Published (2026) ----------
+
+- id: fsm-lora-2026
+  title: >-
+    FSM-LoRA: Dynamic Gradient Gating via Finite State Machines for
+    Energy-Efficient LoRA Fine-Tuning
+  authors:
+    - M. K. A. Khan
+  venue: IEEE 2nd International Conference on AI and Emerging Technology for Sustainable Future (ICAISF 2026)
+  year: 2026
+  status: Published
+  abstract: >-
+    A Finite State Machine controller dynamically skips redundant backward
+    passes during LoRA fine-tuning. Skipped 15–58% of backward passes,
+    up to 58.58% wall-clock time reduction, accuracy within ±0.5% of
+    standard LoRA. Evaluated on Phi-2, Qwen2.5-3B, and OpenLLaMA-3B.
+
+# ---------- Under Review ----------
+
+- id: tal-grn-medical
+  title: >-
+    TAL-GRN: Topology-Aware Learning Graph Representation Network for
+    Long-Tailed Multi-Class Medical Image Classification
+  authors:
+    - M. K. A. Khan
+  venue: Under review
+  year: 2026
+  status: Under Review
+  abstract: >-
+    Adaptive k and learned edge prediction / pruning on a long-tailed,
+    imbalanced multi-class medical-image dataset. Improves minority-class
+    F1 over the graph-representation baseline by [TBD: percentage delta].
+
+- id: persona-multiplicity-moral
+  title: >-
+    Persona Multiplicity and Deliberative Synthesis in a Single Large
+    Language Model: A Stochastic Multi-Agent Study of Moral Game-Theoretic
+    Choice
+  authors:
+    - M. K. A. Khan
+  venue: Thesis (not published)
+  year: 2026
+  status: Preprint
+  abstract: >-
+    A multi-persona moral reasoning framework that generates dynamic
+    personas, performs independent reasoning, and aggregates via a
+    deliberative synthesis (not simple voting). Metrics: moral conflict
+    score, consensus strength, stakeholder / principle coverage.
+    Outperforms single-shot baselines on stakeholder and consequence
+    coverage.
+
+# ---------- Thesis-stage (CSE299 / earlier) ----------
+
+- id: benemo-cse299
+  title: >-
+    BENEMO — Bangla Multimodal Emotion Detection (Early Hybrid Approach)
+  authors:
+    - M. K. A. Khan
+  venue: North South University — CSE299
+  year: 2024
+  status: Preprint
+  abstract: >-
+    CSE299 thesis on Bangla multimodal (speech + text) emotion recognition.
+    Hybrid early fusion: speech features (MFCCs / wav2vec) plus Bangla text
+    embeddings, evaluated on an internal acted-emotion dataset.
+  paper_url: https://github.com/Afran-zero/BENEMO-BANGLA-MULTIMODAL-EMOTION-DETECTION-EARLY-HYBRID-APPROACH
+
+- id: knn-heuristics
+  title: >-
+    Comparative Analysis of Heuristic and Dynamic Methods for Optimizing
+    the K Parameter in K-Nearest Neighbors
+  authors:
+    - M. K. A. Khan
+  venue: Internal report (not published)
+  year: 2025
+  status: Preprint
+  abstract: >-
+    Compares heuristic K choices (odd integers around sqrt(N)) with dynamic
+    K-selection methods on standard tabular classification benchmarks.
+    [TBD: best dynamic method's mean accuracy gain over fixed K].
+  paper_url: https://github.com/Afran-zero/Comparative-Analysis-of-Heuristic-and-Dynamic-Methods-for-Optimizing-the-K-Parameter

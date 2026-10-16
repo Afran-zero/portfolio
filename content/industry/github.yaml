@@ -1,0 +1,48 @@
+# Curated GitHub repos — 4–6 entries per PLAN §24.
+# Schema: GitHubRepoSchema — name, description, language?, stars (optional), url (http(s)).
+# Stars only shown if < 100. No colored dots. Language as a mono label.
+# Sourced from the actual Afran-zero GitHub profile.
+
+- name: Aselo-Tech-Matters-main
+  description: >-
+    Aselo AI form auto-fill system — FastAPI + AWS Bedrock (Claude) +
+    React + TypeScript. S3 transcripts → structured form fields.
+  language: Python
+  url: https://github.com/Afran-zero/Aselo-Tech-Matters-main
+
+- name: STORE
+  description: >-
+    Multi-tenant multi-store ERP — FastAPI + MongoDB + React + React
+    Native (Expo). Auth/RBAC, Inventory, Sales, Analytics, AI Assistant.
+  language: TypeScript
+  url: https://github.com/Afran-zero/STORE
+
+- name: CryptoStream-real-time-crypto-analytics-pipeline
+  description: >-
+    Real-time crypto market data pipeline — WebSocket → Kafka → Spark →
+    Postgres (Bronze) → dbt (Silver + Gold) → FastAPI + React. Airflow
+    orchestration.
+  language: Python
+  url: https://github.com/Afran-zero/CryptoStream-real-time-crypto-analytics-pipeline
+
+- name: Marketplace
+  description: >-
+    MarketPlus local stock analytics dashboard — AWS S3 + Athena + Glue +
+    FastAPI + React + Spark + Prefect. Bronze → Silver → Gold medallion.
+  language: "—"
+  url: https://github.com/Afran-zero/Marketplace
+
+- name: BENEMO-BANGLA-MULTIMODAL-EMOTION-DETECTION-EARLY-HYBRID-APPROACH
+  description: >-
+    Bangla multimodal (speech + text) emotion recognition. Models,
+    datasets, and training scripts.
+  language: Python
+  url: https://github.com/Afran-zero/BENEMO-BANGLA-MULTIMODAL-EMOTION-DETECTION-EARLY-HYBRID-APPROACH
+
+- name: uwu.1.0.2
+  description: >-
+    Uwu Connect — full social-media platform. Registration with email
+    verification, follow / block, private messaging, media upload,
+    comments, likes / dislikes, reporting, admin moderation.
+  language: PHP
+  url: https://github.com/Afran-zero/uwu.1.0.2

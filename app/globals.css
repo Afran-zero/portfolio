@@ -1,0 +1,483 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+
+/* Tailwind v4 theme — map design tokens to utility classes.
+   After this, classes like `bg-bg`, `text-fg`, `text-blue`, `border-border`,
+   `font-sans`, `font-mono` are available throughout the app.
+*/
+@theme {
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-bg-soft: var(--bg-soft);
+
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-on-dark: var(--fg-on-dark);
+
+  --color-blue: var(--blue);
+  --color-blue-dark: var(--blue-dark);
+  --color-blue-soft: var(--blue-soft);
+  --color-blue-50: var(--blue-50);
+
+  --color-border: var(--border);
+
+  --color-grid-line: var(--grid-line);
+  --color-grid-line-strong: var(--grid-line-strong);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+
+  /* Override Tailwind's default `ease-out` to use our --motion-ease token
+     (cubic-bezier(0.2, 0, 0, 1)) instead of the default (0, 0, 0.2, 1).
+     Named --motion-ease (not --ease-out) to avoid Turbopack emitting a
+     broken arbitrary-class fallback `.ease-\[var\(--ease-out\)\]`. */
+  --motion-ease: cubic-bezier(0.2, 0, 0, 1);
+
+  /* Display type scale — used by hero h1s and section display headings. */
+  --text-display: clamp(2.75rem, 6vw, 5.5rem);
+}
+
+/* ---- Base resets / globals ---- */
+
+html,
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: var(--blue);
+  color: var(--fg-on-dark);
+}
+
+/* ---- Focus ring (visible, accessible) ---- */
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ---- Reduced motion global override (skills/2d-object-interactive §14) ---- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---- Blueprint grid overlay (landing-page bento only) ----
+   Two stacked 1px linear gradients form a 24px cell grid using the
+   --grid-line color. Subtle enough to read as texture, strong enough
+   to support a "technical schematic" identity.
+*/
+.bg-blueprint {
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: var(--grid-cell) var(--grid-cell);
+}
+
+/* ---- Sky gradient + cloud field (home page) ----
+   Layered radial gradients simulate soft cloud puffs sitting on top of a
+   light blue wash that fades from a denser top tint to the page's --bg.
+   No raster images — pure CSS so it stays crisp on any DPI and prints
+   cleanly. The clouds use translucent white radial gradients with subtle
+   blur so they read as soft, not as solid discs. */
+.bg-sky {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(
+      circle at 18% 22%,
+      rgba(255, 255, 255, 0.85) 0%,
+      rgba(255, 255, 255, 0.55) 18%,
+      rgba(255, 255, 255, 0) 42%
+    ),
+    radial-gradient(
+      circle at 78% 12%,
+      rgba(255, 255, 255, 0.75) 0%,
+      rgba(255, 255, 255, 0.45) 16%,
+      rgba(255, 255, 255, 0) 38%
+    ),
+    radial-gradient(
+      circle at 50% 8%,
+      rgba(255, 255, 255, 0.65) 0%,
+      rgba(255, 255, 255, 0.35) 14%,
+      rgba(255, 255, 255, 0) 34%
+    ),
+    radial-gradient(
+      circle at 92% 38%,
+      rgba(255, 255, 255, 0.55) 0%,
+      rgba(255, 255, 255, 0.28) 14%,
+      rgba(255, 255, 255, 0) 32%
+    ),
+    radial-gradient(
+      circle at 8% 52%,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 0.22) 14%,
+      rgba(255, 255, 255, 0) 30%
+    ),
+    linear-gradient(
+      180deg,
+      #e7f0ff 0%,
+      #eef4ff 28%,
+      #f3f7ff 56%,
+      #f7faff 80%,
+      #ffffff 100%
+    );
+  background-attachment: scroll, scroll, scroll, scroll, scroll, scroll;
+}
+
+/* Cloud drift — long horizontal loop so the page feels alive without
+   distracting from the content. Gated on no-preference so reduced-motion
+   users get a static gradient. */
+@keyframes cloud-drift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(40px, -6px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .animate-cloud-drift {
+    animation: cloud-drift 32s ease-in-out infinite;
+  }
+  .animate-cloud-drift-slow {
+    animation: cloud-drift 48s ease-in-out infinite;
+  }
+}
+
+.bg-blueprint-strong {
+  background-image:
+    linear-gradient(to right, var(--grid-line-strong) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line-strong) 1px, transparent 1px);
+  background-size: var(--grid-cell) var(--grid-cell);
+}
+
+/* ---- Wireframe corner ticks (BentoCard) ----
+   Each card paints 4 short L-shaped ticks at its corners to read as
+   an engineering blueprint target. Pure CSS borders, no SVG.
+*/
+.ticks {
+  position: relative;
+}
+.ticks::before,
+.ticks::after,
+.ticks > .ticks-bl,
+.ticks > .ticks-br {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: var(--blue);
+  border-style: solid;
+  pointer-events: none;
+}
+.ticks::before {
+  top: -1px;
+  left: -1px;
+  border-width: 1px 0 0 1px;
+}
+.ticks::after {
+  top: -1px;
+  right: -1px;
+  border-width: 1px 1px 0 0;
+}
+.ticks > .ticks-bl {
+  bottom: -1px;
+  left: -1px;
+  border-width: 0 0 1px 1px;
+}
+.ticks > .ticks-br {
+  bottom: -1px;
+  right: -1px;
+  border-width: 0 1px 1px 0;
+}
+
+/* ---- Corner brackets (BentoCard `brackets`) ----
+   Larger L-shaped marks at every corner — stronger than ticks, reads as
+   a schematic annotation rather than a target reticle. 1px blue stroke,
+   inset 1px so it sits on the inner edge of the 1px border. */
+.bracket-tl,
+.bracket-tr,
+.bracket-bl,
+.bracket-br {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: var(--blue);
+  border-style: solid;
+  pointer-events: none;
+}
+.bracket-tl {
+  top: 1px;
+  left: 1px;
+  border-width: 1px 0 0 1px;
+}
+.bracket-tr {
+  top: 1px;
+  right: 1px;
+  border-width: 1px 1px 0 0;
+}
+.bracket-bl {
+  bottom: 1px;
+  left: 1px;
+  border-width: 0 0 1px 1px;
+}
+.bracket-br {
+  bottom: 1px;
+  right: 1px;
+  border-width: 0 1px 1px 0;
+}
+
+/* ---- Corner markers (OverviewSection) ----
+   Four short L-shaped marks at every corner of an element. Inset 8px so
+   they sit inside the 1px border, on a clear light background. For dark
+   surfaces use `.corner-*-light` variants (blue strokes for dark bg). */
+.corner-tl,
+.corner-tr,
+.corner-bl,
+.corner-br,
+.corner-tl-light,
+.corner-tr-light,
+.corner-bl-light,
+.corner-br-light {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-style: solid;
+  border-color: var(--blue);
+  pointer-events: none;
+}
+.corner-tl {
+  top: 8px;
+  left: 8px;
+  border-width: 1px 0 0 1px;
+}
+.corner-tr {
+  top: 8px;
+  right: 8px;
+  border-width: 1px 1px 0 0;
+}
+.corner-bl {
+  bottom: 8px;
+  left: 8px;
+  border-width: 0 0 1px 1px;
+}
+.corner-br {
+  bottom: 8px;
+  right: 8px;
+  border-width: 0 1px 1px 0;
+}
+/* Light variants — same shape but stronger blue stroke for dark surfaces. */
+.corner-tl-light,
+.corner-tr-light,
+.corner-bl-light,
+.corner-br-light {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+.corner-tl-light {
+  top: 8px;
+  left: 8px;
+  border-width: 1px 0 0 1px;
+}
+.corner-tr-light {
+  top: 8px;
+  right: 8px;
+  border-width: 1px 1px 0 0;
+}
+.corner-bl-light {
+  bottom: 8px;
+  left: 8px;
+  border-width: 0 0 1px 1px;
+}
+.corner-br-light {
+  bottom: 8px;
+  right: 8px;
+  border-width: 0 1px 1px 0;
+}
+
+/* ---- Hero motion shapes — calm minimalist drift loop ----
+   Pauses under prefers-reduced-motion (global override above). */
+@keyframes drift {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(6px, -8px, 0) rotate(2deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+}
+.animate-drift {
+  animation: drift 18s ease-in-out infinite;
+}
+.animate-drift-slow {
+  animation: drift 26s ease-in-out infinite;
+}
+
+@keyframes circle-blink {
+  0%,
+  100% {
+    opacity: 0.42;
+  }
+  50% {
+    opacity: 0.78;
+  }
+}
+
+.animate-circle-drift {
+  animation:
+    drift 18s ease-in-out infinite,
+    circle-blink 3.6s ease-in-out infinite;
+}
+
+@keyframes avatar-breathe {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.012);
+  }
+}
+
+@keyframes avatar-head-motion {
+  0%,
+  100% {
+    transform: rotate(0deg) translateX(0);
+  }
+  22% {
+    transform: rotate(-4deg) translateX(-2px);
+  }
+  50% {
+    transform: rotate(0deg) translateX(0);
+  }
+  78% {
+    transform: rotate(4deg) translateX(2px);
+  }
+}
+
+@keyframes avatar-torso-motion {
+  0%,
+  100% {
+    transform: rotate(0deg) translateY(0);
+  }
+  50% {
+    transform: rotate(0.7deg) translateY(-1px);
+  }
+}
+
+.avatar-breath {
+  animation: avatar-breathe 3.2s ease-in-out infinite;
+}
+
+.avatar-head-motion {
+  animation: avatar-head-motion 3.8s ease-in-out infinite;
+}
+
+.avatar-torso-motion {
+  animation: avatar-torso-motion 3.8s ease-in-out infinite;
+}
+
+@keyframes avatar-ground {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scaleX(0.92);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scaleX(1);
+  }
+}
+
+.avatar-ground {
+  animation: avatar-ground 3.2s ease-in-out infinite;
+}
+
+.experience-timeline::before {
+  animation: timeline-rail-pulse 2.8s ease-in-out infinite;
+  box-shadow: 0 0 8px rgb(23 105 255 / 0.45);
+}
+
+@keyframes timeline-rail-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    box-shadow: 0 0 5px rgb(23 105 255 / 0.3);
+  }
+  50% {
+    opacity: 0.95;
+    box-shadow: 0 0 12px rgb(23 105 255 / 0.7);
+  }
+}
+
+.education-timeline::before {
+  animation: timeline-rail-pulse 2.8s ease-in-out infinite;
+  box-shadow: 0 0 8px rgb(23 105 255 / 0.45);
+}
+
+/* RoleTicker caret blink — gated on no-preference so users who request
+   reduced motion don't get a blinking element. */
+@keyframes caret-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .animate-caret {
+    animation: caret-blink 1s steps(2, end) infinite;
+  }
+}
+
+/* Eyebrow marker — hollow neon-blue ring that pulses ("beep beep" feel).
+   The outer ring stays visible; the inner fill and glow breathe. Gated
+   on no-preference so users who request reduced motion see a static dot. */
+@keyframes pulse-ring {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(23, 105, 255, 0.55);
+    background-color: rgba(23, 105, 255, 0.9);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(23, 105, 255, 0);
+    background-color: rgba(23, 105, 255, 0.35);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .animate-pulse-ring {
+    animation: pulse-ring 1.6s ease-in-out infinite;
+  }
+}

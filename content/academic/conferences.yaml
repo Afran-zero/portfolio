@@ -1,0 +1,27 @@
+# Conferences and talks — chronological list (newest first).
+# Schema: ConferenceSchema — id, year (int), name, contribution, location?
+# Sourced from g:\portfolio\base data.md.
+
+- id: ieee-raaiot-2026
+  year: 2026
+  name: 5th IEEE International Conference on Robotics, Automation, Artificial-intelligence and Internet-of-Things (IEEE RAAIoT 2026)
+  contribution: >-
+    Paper — Explainable Hybrid ARIMA–ML Forecasting of Bangladesh's
+    GDP: Sectoral Energy Consumption and Carbon Emission Dynamics
+    (Hybrid Residual Learning Ensemble with SHAP; best MAPE 7.60%).
+
+- id: icaisf-2026
+  year: 2026
+  name: IEEE 2nd International Conference on AI and Emerging Technology for Sustainable Future (ICAISF 2026)
+  location: University of Catania, Catania, Italy
+  contribution: >-
+    Paper — FSM-LoRA: Dynamic Gradient Gating via Finite State
+    Machines for Energy-Efficient LoRA Fine-Tuning (15–58% backward
+    passes skipped, up to 58.58% wall-clock reduction, ±0.5% accuracy).
+
+- id: iccit-2026-under-review
+  year: 2026
+  name: 29th International Conference on Computer and Information Technology (ICCIT)
+  contribution: >-
+    Under review — Benchmarking LLMs Against Classical ML for
+    Undergraduate Academic Performance Prediction.

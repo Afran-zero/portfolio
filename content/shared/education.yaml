@@ -1,0 +1,42 @@
+# Education — single source, used by both Industry and Academic pages.
+# Schema: EducationSchema — institution, degree, field?, location?, start?, end (nullable)?,
+#                                  credits?, gpa?, gpa_scale (default 4.0), thesis?, highlights?
+# English test scores (IELTS) live in content/shared/languages.yaml.
+
+- institution: North South University
+  degree: B.Sc. in Computer Science & Engineering
+  field: Computer Science & Engineering
+  location: Dhaka, Bangladesh
+  start: 2022-01-01
+  end: 2026-06-30
+  gpa: 3.62
+  gpa_scale: 4.0
+  highlights:
+    - Graduated Cum Laude.
+    - Awarded 25% Merit Scholarship.
+    - Undergraduate research in quantum machine learning for HEP, GNN
+      baselines, and Bangla multimodal emotion detection.
+
+- institution: Dhaka Residential Model College
+  degree: Higher Secondary Certificate (HSC)
+  field: Science
+  location: Mohammadpur, Dhaka, Bangladesh
+  start: 2019-07-01
+  end: 2021-06-30
+  gpa: 5
+  gpa_scale: 5
+  highlights:
+    - HSC at DRMC, the first autonomous institution and first boarding
+      school in Bangladesh (established 1960).
+
+- institution: Dhaka Residential Model College
+  degree: Secondary School Certificate (SSC)
+  field: Science
+  location: Mohammadpur, Dhaka, Bangladesh
+  start: 2017-01-01
+  end: 2019-06-30
+  gpa: 5
+  gpa_scale: 5
+  highlights:
+    - SSC at DRMC, the first autonomous institution and first boarding
+      school in Bangladesh (established 1960).

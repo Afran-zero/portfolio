@@ -1,0 +1,28 @@
+# Thesis — single entry.
+# Schema: ThesisSchema — title, abstract, supervisor?, status, pdf_url? (url).
+# Sourced from g:\portfolio\base data.md.
+
+title: >-
+  Persona Multiplicity and Deliberative Synthesis in a Single Large
+  Language Model: A Stochastic Multi-Agent Study of Moral Game-Theoretic
+  Choice
+abstract: >-
+  Asks whether a single LLM can simulate multiple moral personas and
+  produce better-reasoned answers to game-theoretic moral dilemmas than a
+  single-shot baseline. The framework generates dynamic personas, runs
+  independent reasoning per persona, and aggregates via deliberative
+  synthesis (not simple voting). Metrics: moral conflict score,
+  consensus strength, stakeholder / principle coverage. Multi-persona
+  synthesis outperforms single-shot baselines on stakeholder and
+  consequence coverage.
+status: Thesis (in preparation; not published)
+
+# Additional thesis-track work rendered on the Academic page beneath the
+# main thesis block. Listed by title only — full details live in
+# content/academic/publications.yaml under the same id.
+additional_work:
+  - id: tal-grn-medical
+    title: >-
+      TAL-GRN: Topology-Aware Learning Graph Representation Network for
+      Long-Tailed Multi-Class Medical Image Classification
+    status: Under Review

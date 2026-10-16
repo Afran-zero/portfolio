@@ -1,0 +1,191 @@
+# Selected projects — 5–8 entries per PLAN §20.
+# Schema: ProjectSchema — slug, name, category, summary, year, stack[], impact?, github?, link?, case_study (default false), featured (default false).
+# Sourced from g:\portfolio\base data.md.
+
+- slug: aselo-form-autofill
+  name: Aselo AI Form Auto-Fill
+  category: AI / Full-Stack
+  summary: >-
+    Automated extraction of structured form fields (Child, Category, Summary)
+    from conversation transcripts. S3 → FastAPI → AWS Bedrock (Claude) → S3 +
+    React. Real-time chat view, MFA session support, form auto-fill, scalable
+    for Lambda + API Gateway or ECS/Fargate.
+  year: 2025
+  stack:
+    - Python
+    - FastAPI
+    - React
+    - TypeScript
+    - AWS S3
+    - AWS Bedrock
+    - Claude
+  impact: Extracted Child, Category, and Summary fields from conversation transcripts in near real time via S3 → FastAPI → AWS Bedrock (Claude) → React chat.
+  github: https://github.com/Afran-zero/Aselo-Tech-Matters-main
+  case_study: true
+  featured: true
+
+- slug: store-multi-tenant-erp
+  name: STORE — Multi-Tenant Smart Multi-Store ERP
+  category: Full-Stack
+  summary: >-
+    Full ERP with backend API, web dashboard, mobile worker app, and AI
+    assistant. Auth/RBAC, Stores, Inventory, Recipes, Sales, Attendance,
+    Tickets, Analytics, OpenRouter-backed AI assistant. Multi-tenancy
+    enforced via businessId.
+  year: 2025
+  stack:
+    - Python
+    - FastAPI
+    - MongoDB
+    - Motor
+    - JWT
+    - Redis
+    - APScheduler
+    - React
+    - TypeScript
+    - Vite
+    - Tailwind CSS
+    - React Query
+    - Recharts
+    - React Native
+    - Expo
+  impact: >-
+    One FastAPI backend powering web dashboard, mobile worker app, and an
+    OpenRouter-backed AI assistant under a shared RBAC + businessId tenancy
+    model — covering Stores, Inventory, Recipes, Sales, Attendance, Tickets,
+    and Analytics end-to-end.
+  github: https://github.com/Afran-zero/STORE
+  case_study: true
+  featured: true
+
+- slug: cryptostream-pipeline
+  name: CryptoStream — Real-Time Crypto Market Data Pipeline
+  category: Data Engineering
+  summary: >-
+    End-to-end real-time pipeline: WebSocket → Kafka → Spark Structured
+    Streaming → Postgres (Bronze) → dbt (Silver + Gold) → FastAPI + React
+    dashboard. Airflow runs every 5 minutes. 1-minute OHLCV candles and
+    moving averages; health monitoring; Docker Compose full stack.
+  year: 2025
+  stack:
+    - Python
+    - Kafka
+    - Spark
+    - Postgres
+    - dbt
+    - Airflow
+    - FastAPI
+    - React
+    - Docker Compose
+  impact: WebSocket → Kafka → Spark Structured Streaming → Postgres (Bronze) → dbt (Silver + Gold) → FastAPI + React. Airflow runs every 5 minutes for OHLCV candles and moving averages.
+  github: https://github.com/Afran-zero/CryptoStream-real-time-crypto-analytics-pipeline
+  case_study: true
+  featured: true
+
+- slug: marketplus-stock-analytics
+  name: MarketPlus — Local Stock Analytics Dashboard
+  category: Data Engineering
+  summary: >-
+    Medallion-architecture local stock analytics. AWS S3 + Athena + Glue +
+    FastAPI + React + Spark + Prefect. Cloud ingestion via EventBridge +
+    Lambda from Alpha Vantage; local Spark processing via Prefect.
+    Daily returns, moving averages, volatility, top movers.
+  year: 2025
+  stack:
+    - Python
+    - AWS S3
+    - AWS Glue
+    - AWS Athena
+    - AWS Lambda
+    - EventBridge
+    - FastAPI
+    - React
+    - Spark
+    - Prefect
+  github: https://github.com/Afran-zero/Marketplace
+  case_study: true
+  featured: false
+  impact: Daily returns, moving averages, volatility, and top movers queried through Athena + Glue over S3. Scheduled Spark runs via Prefect.
+
+- slug: service-provider-marketplace
+  name: Service Provider Platform
+  category: Full-Stack
+  summary: >-
+    Marketplace connecting customers with local service providers (cleaning,
+    plumbing, electrical). Business registration, bookings, reviews, admin
+    dashboard, role-based access. Design patterns: Factory, Command,
+    Observer, Adapter, Decorator, Proxy, Repository.
+  year: 2024
+  stack:
+    - Python
+    - Flask
+    - MongoEngine
+    - MongoDB
+    - Jinja2
+    - Bootstrap
+    - Cloudinary
+    - Flask-Login
+  github: https://github.com/Afran-zero/service-provider-project-new-version-
+  case_study: false
+  featured: false
+
+- slug: denz-ecommerce
+  name: Denz E-Commerce
+  category: Full-Stack
+  summary: >-
+    Modern e-commerce platform for Denz Apparel. Product browsing with
+    filters, variants/sizes, cart, checkout, order history, Google OAuth,
+    admin dashboard (orders, products, ads).
+  year: 2025
+  stack:
+    - TypeScript
+    - Next.js 14
+    - Supabase
+    - PostgreSQL
+    - Cloudinary
+    - Tailwind CSS
+  impact: Live apparel storefront for Denz Apparel with Google OAuth, role-based admin, and Postgres-backed product/order management.
+  link: https://www.denzapparel.com/
+  github: https://github.com/Bijoy2406/denz
+  case_study: false
+  featured: true
+
+- slug: farhana-foundation-ngo
+  name: Farhana Afroz Foundation NGO Website
+  category: Full-Stack
+  summary: >-
+    Responsive NGO website with donation system, events, team showcase,
+    impact tracking, FAQ, contact forms. Dynamic content via Sanity CMS,
+    donation modal with QR / bank details, image protection.
+  year: 2025
+  stack:
+    - Next.js 15
+    - Sanity CMS
+    - Tailwind CSS
+    - Cloudinary
+    - EmailJS
+    - Framer Motion
+    - Embla Carousel
+  impact: Sanity-backed NGO site with donation flow (QR + bank details), events, team showcase, impact tracking, and image-protected media for the Farhana Afroz Foundation.
+  link: https://www.farhanaafrozfoundation.org/
+  github: https://github.com/Bijoy2406/ngo_donation
+  case_study: false
+  featured: false
+
+- slug: uwu-connect-social
+  name: Uwu Connect — Social Media Platform
+  category: Web
+  summary: >-
+    Full social-media web app: registration with email verification,
+    follow / block, private messaging, media upload, comments, likes /
+    dislikes, reporting, admin moderation. Academic project (CSE311.10).
+  year: 2024
+  stack:
+    - PHP
+    - MySQL
+    - Bootstrap
+    - HTML
+    - CSS
+  github: https://github.com/Afran-zero/uwu.1.0.2
+  case_study: false
+  featured: false

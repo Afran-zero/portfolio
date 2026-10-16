@@ -1,0 +1,101 @@
+# Skills — keep only technologies genuinely used in shipped work.
+# Skills rule (PLAN §18, skills/content-writing-no-ai-slop): no aspirational entries.
+# Sourced from g:\portfolio\base data.md.
+
+groups:
+  - id: languages
+    label: Languages
+    items:
+      - Python
+      - TypeScript
+      - JavaScript
+      - PHP
+      - SQL
+      - HTML
+      - CSS
+
+  - id: backend
+    label: Backend
+    items:
+      - FastAPI
+      - Flask
+      - Next.js (API routes)
+      - Node.js
+      - PHP
+
+  - id: frontend
+    label: Frontend
+    items:
+      - React
+      - Next.js
+      - Tailwind CSS
+      - Bootstrap
+      - React Native (Expo)
+
+  - id: databases
+    label: Databases
+    items:
+      - MongoDB
+      - PostgreSQL
+      - MySQL
+      - Supabase
+      - Sanity CMS
+
+  - id: cloud
+    label: Cloud (AWS)
+    items:
+      - S3
+      - Bedrock
+      - Lambda
+      - EventBridge
+      - Glue
+      - Athena
+      - ECS / Fargate
+      - EC2
+
+  - id: data_engineering
+    label: Data Engineering
+    items:
+      - Kafka
+      - Spark Structured Streaming
+      - dbt
+      - Apache Airflow
+      - Prefect
+      - Medallion architecture
+
+  - id: ai_ml
+    label: ML / AI
+    items:
+      - Scikit-learn
+      - XGBoost
+      - SHAP
+      - LoRA fine-tuning
+      - LLMs (prompting + fine-tuning)
+      - AWS Bedrock (Claude)
+      - PyTorch
+      - PennyLane
+      - Qiskit
+
+  - id: tools
+    label: Tools & Patterns
+    items:
+      - Docker
+      - Redis
+      - Cloudinary
+      - JWT
+      - Factory
+      - Proxy
+      - Command
+      - Observer
+      - Adapter
+      - Decorator
+      - Repository
+
+  - id: research
+    label: Research Areas
+    items:
+      - Quantum key distribution (E91, BBM92)
+      - Graph representation learning
+      - Multimodal emotion recognition
+      - Multi-agent LLM reasoning
+      - Time-series forecasting (ARIMA + ML)

@@ -1,0 +1,20 @@
+# Certifications — append as you earn them.
+# Schema: CertificationSchema — id, name, issuer, year (int), url?, file?
+
+- id: mern-ostad
+  name: Full-Stack Web Development with MERN
+  issuer: Ostad
+  year: 2024
+  url: https://ostad.app
+
+- id: widom-databases
+  name: Data Science Short Course (Databases)
+  issuer: Jennifer Widom — Stanford University
+  year: 2023
+  url: https://cs.stanford.edu/people/widom/
+
+- id: aws-dea-c01
+  name: AWS Certified Data Engineer — Associate (DEA-C01)
+  issuer: Amazon Web Services
+  year: 2025
+  url: https://aws.amazon.com/certification/certified-data-engineer-associate/

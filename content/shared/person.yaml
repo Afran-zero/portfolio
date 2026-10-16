@@ -1,0 +1,18 @@
+# Person — used as the single source of truth across home, /contact, JSON-LD.
+# Schema: PersonSchema — see lib/schemas.ts.
+
+name: Md Kaif Afran Khan
+short_name: KAIF
+role: AI Engineer & Researcher
+roles:
+  - AI Engineer
+  - Researcher
+  - Project Manager
+  - Data Engineer
+bio: >-
+  I build graph-learning models, run quantum machine learning experiments on
+  HEP data, and ship full-stack applications. The split on this site reflects
+  that — industry for engineering, academia for research.
+location: Dhaka, Bangladesh
+pronouns: he/him
+portrait_path: /images/profile/profile.png

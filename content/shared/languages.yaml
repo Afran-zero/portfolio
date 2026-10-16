@@ -1,0 +1,13 @@
+# Languages — spoken languages with optional CEFR-aligned score (0–10),
+# plus standardized test scores (e.g. IELTS) which omit the score and
+# report a band instead. IELTS lives here as the single source of truth
+# for English test scores (removed from education.yaml).
+
+- name: English
+  level: Professional working
+  score: 8
+- name: Bengali
+  level: Native
+  score: 10
+- name: IELTS Academic
+  level: Overall band 7.5

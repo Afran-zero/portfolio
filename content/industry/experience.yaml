@@ -1,0 +1,67 @@
+# Industry experience — reverse chronological. Current roles use end: null.
+# Schema: ExperienceSchema — id, role, company, location?, start (iso), end (nullable), description, stack?, highlights?
+# Sourced from g:\portfolio\base data.md.
+
+- id: ai-engineer-data-island-2025
+  role: AI Engineer & Project Management Intern
+  company: The Data Island
+  location: Dhaka, Bangladesh
+  start: 2025-01-01
+  end: 2026-01-01
+  description: >-
+    Built Aselo, an automated form-filling system for the Aselo crisis-line
+    platform. The pipeline extracts Child, Category, and Summary fields from
+    S3-hosted transcripts via AWS Bedrock (Anthropic Claude) and surfaces
+    them in a real-time React chat view, with MFA session support.
+    Co-managed the project management track — ran stakeholder meetings, deal
+    discussions, and audit documentation.
+  stack:
+    - Python
+    - FastAPI
+    - React
+    - TypeScript
+    - AWS S3
+    - AWS Bedrock
+    - Claude
+  highlights:
+    - "End-to-end pipeline: S3 → FastAPI → Bedrock → S3 + React frontend."
+    - Architecture ready for AWS Lambda + API Gateway (serverless) or
+      ECS/Fargate (containerized) deployment.
+    - Managed stakeholder relationships and ran stakeholder / deal meetings.
+    - Created audit-ready documentation and project artifacts.
+    - "Public code: https://github.com/Afran-zero/Aselo-Tech-Matters-main"
+
+- id: tech-lead-farhana-foundation-current
+  role: Technical Lead (Volunteer)
+  company: Farhana Afroz Foundation
+  location: Dhaka, Bangladesh
+  start: 2024-01-01
+  end: null
+  description: >-
+    Technical lead for farhanaafrozfoundation.org since 2024. Next.js 15 +
+    Sanity CMS. Built and maintain the donation flow (QR + bank details,
+    image protection), events, impact tracking, FAQ, and team showcase.
+  stack:
+    - Next.js
+    - Sanity CMS
+    - Tailwind CSS
+    - Cloudinary
+    - EmailJS
+    - Framer Motion
+    - Embla Carousel
+  highlights:
+    - "Live site: https://www.farhanaafrozfoundation.org/"
+    - Donation modal with QR / bank details and image protection.
+
+- id: executive-ucchash-prohor-2019-2022
+  role: Executive Committee Member
+  company: UCCHASH Prohor
+  location: Dhaka, Bangladesh
+  start: 2019-01-01
+  end: 2022-12-31
+  description: >-
+    Executive committee member for UCCHASH Prohor (Dhaka) from 2019 to 2022.
+    Coordinated programs and operations across the three-year tenure.
+  highlights:
+    - Three-year tenure (2019–2022).
+    - "Org page: https://www.facebook.com/ucchashprohor/"
